@@ -1,0 +1,126 @@
+<?php
+include_once 'map.features.inc';
+/**
+ * @file
+ * Code for the Map feature.
+ */
+
+
+/**
+ * Implements hook_menu().
+ */
+function map_menu() {
+  // A menu callback is required when using ajax outside of the Form API.
+  $items['map_filter_block_ajax_callback'] = array(
+    'page callback' => 'map_filter_block_ajax_response',
+    'access callback' => 'user_access',
+    'access arguments' => array('access content'),
+    'type' => MENU_CALLBACK,
+    'file' => 'map_ajax.inc',
+  );
+  return $items;
+}
+/**
+ * Implements hook_views_ajax_data_alter().
+ */
+//function map_views_ajax_data_alter(&$commands, $view) {
+  // alter data returned by locations feed on ajax requests
+//}
+
+/**
+ * Implements hook_block_info().
+ */
+function map_block_info() {
+  // Many options are defined in hook_block_info():
+  $blocks['map_filter_block'] = array(
+    // info: The name of the block.
+    'info' => t('Map filter block'),
+    // Block caching options (per role, per user, etc.)
+    // DRUPAL_CACHE_PER_ROLE is the default.
+    // @todo set to DRUPAL_CACHE_PER_PAGE or DRUPAL_CACHE_GLOBAL when finished implementing
+    'cache' => DRUPAL_NO_CACHE,
+
+    // This sample shows how to provide default settings. In this case we'll
+    // enable the block in the first sidebar and make it visible only on
+    // 'node/*' pages. See the hook_block_info() documentation for these.
+    'status' => TRUE,
+    'region' => 'sidebar_first',
+    'visibility' => BLOCK_VISIBILITY_LISTED,
+    'pages' => '<front>',
+  );
+
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ *
+ * This hook generates the contents of the blocks themselves.
+ */
+function map_block_view($delta = '') {
+  // The $delta parameter tells us which block is being requested.
+  switch ($delta) {
+    case 'map_filter_block':
+      $block['subject'] = t('Map filter block');
+      $block['content'] = map_block_contents($delta);
+      drupal_add_js(drupal_get_path('module', 'map') . '/js/jquery-ui.min.js', 'file');
+      drupal_add_js(drupal_get_path('module', 'map') . '/js/jquery.fancytree.min.js', 'file');
+      drupal_add_js(drupal_get_path('module', 'map') . '/js/map.js', array('type' => 'file', 'scope' => 'footer', 'weight' => 99));
+      drupal_add_js(drupal_get_path('module', 'map') . '/js/popup.js', array('type' => 'file', 'scope' => 'footer', 'weight' => 99));
+      break;
+  }
+  return $block;
+}
+
+function map_block_contents($which_block) {
+  switch ($which_block) {
+    case 'map_filter_block':
+
+      $output = "<div id='filter'></div>";
+      $result = array(
+        '#markup' => $output,
+      );
+      return $result;
+  }
+}
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function map_views_post_render(&$view) {
+  if($view->name === 'map_filter') {
+
+    $terms = _map_array_key_to_tid($view->display_handler->output);
+    $result = array();
+    $last_term_stack = array();
+    foreach ($terms as $key => $term) {
+      $term->iconClass = str_replace('_', '-', $term->icon_class);
+      if (!isset($term->parent_id)) {
+        $result[$key] = $term;
+      }
+      else {
+        $parent_key = $term->parent_id;
+        // prepare parent term structure
+        if (!isset($result[$parent_key])) {
+          $result[$parent_key] = $terms[$parent_key];
+          $result[$parent_key]->folder = TRUE;
+          $result[$parent_key]->expanded = TRUE;
+        }
+        if (isset($result[$term->key])) {
+          $term = $result[$term->key];
+          unset($result[$term->key]);
+        }
+        $result[$parent_key]->children[] = $term;
+      }
+    }
+    $view->display_handler->output = array_values($result);
+  }
+}
+
+function _map_array_key_to_tid($terms) {
+  $result = array();
+  foreach ($terms as $term) {
+      $result[$term->key] = $term;
+  }
+  return $result;
+}
