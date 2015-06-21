@@ -1,0 +1,703 @@
+[
+    {
+        "name": "davidbarratt/custom-installer",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/davidbarratt/custom-installer.git",
+            "reference": "8b0e9eff220c5c6b24019db2153292bc70a53421"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/davidbarratt/custom-installer/zipball/8b0e9eff220c5c6b24019db2153292bc70a53421",
+            "reference": "8b0e9eff220c5c6b24019db2153292bc70a53421",
+            "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "1.0.0"
+        },
+        "require-dev": {
+            "composer/composer": "1.0.*@dev",
+            "phpunit/phpunit": "4.1.*"
+        },
+        "time": "2014-09-01 16:05:23",
+        "type": "composer-plugin",
+        "extra": {
+            "class": "DavidBarratt\\CustomInstaller\\CustomInstallerPlugin"
+        },
+        "installation-source": "source",
+        "autoload": {
+            "psr-4": {
+                "DavidBarratt\\CustomInstaller\\": ""
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "description": "Install custom types into custom locations.",
+        "homepage": "https://github.com/davidbarratt/custom-installer"
+    },
+    {
+        "name": "derhasi/composer-preserve-paths",
+        "version": "0.1.1",
+        "version_normalized": "0.1.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/derhasi/composer-preserve-paths.git",
+            "reference": "81e5107df239f1ad9e142ecab15d498fba34b080"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/derhasi/composer-preserve-paths/zipball/81e5107df239f1ad9e142ecab15d498fba34b080",
+            "reference": "81e5107df239f1ad9e142ecab15d498fba34b080",
+            "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "1.0.0"
+        },
+        "require-dev": {
+            "composer/composer": "1.0.*@dev",
+            "derhasi/tempdirectory": "0.1.*",
+            "phpunit/phpunit": "4.4.*"
+        },
+        "time": "2015-01-07 15:57:00",
+        "type": "composer-plugin",
+        "extra": {
+            "class": "derhasi\\Composer\\Plugin"
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "derhasi\\Composer\\": "src/"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0+"
+        ],
+        "authors": [
+            {
+                "name": "Johannes Haseitl",
+                "email": "johannes@undpaul.de",
+                "homepage": "http://www.undpaul.de"
+            }
+        ],
+        "description": "Composer plugin for preserving custom paths and supporting nested packages",
+        "homepage": "https://github.com/derhasi/composer-preserve-paths",
+        "keywords": [
+            "composer-plugin",
+            "custom path",
+            "installer",
+            "nested package"
+        ]
+    },
+    {
+        "name": "drupal/drupal",
+        "version": "7.34.0",
+        "version_normalized": "7.34.0.0",
+        "source": {
+            "type": "git",
+            "url": "http://git.drupal.org/project/drupal",
+            "reference": "f9cd7bca2dda1a11066ed64e953fd082017b7087"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "http://ftp.drupal.org/files/projects/drupal-7.34.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "replace": {
+            "drupal/aggregator": "self.version",
+            "drupal/bartik": "self.version",
+            "drupal/block": "self.version",
+            "drupal/blog": "self.version",
+            "drupal/book": "self.version",
+            "drupal/color": "self.version",
+            "drupal/comment": "self.version",
+            "drupal/contact": "self.version",
+            "drupal/contextual": "self.version",
+            "drupal/dashboard": "self.version",
+            "drupal/dblog": "self.version",
+            "drupal/field": "self.version",
+            "drupal/field_sql_storage": "self.version",
+            "drupal/field_ui": "self.version",
+            "drupal/file": "self.version",
+            "drupal/filter": "self.version",
+            "drupal/forum": "self.version",
+            "drupal/garland": "self.version",
+            "drupal/help": "self.version",
+            "drupal/image": "self.version",
+            "drupal/list": "self.version",
+            "drupal/locale": "self.version",
+            "drupal/menu": "self.version",
+            "drupal/minimal": "self.version",
+            "drupal/node": "self.version",
+            "drupal/number": "self.version",
+            "drupal/openid": "self.version",
+            "drupal/options": "self.version",
+            "drupal/overlay": "self.version",
+            "drupal/path": "self.version",
+            "drupal/php": "self.version",
+            "drupal/poll": "self.version",
+            "drupal/profile": "self.version",
+            "drupal/rdf": "self.version",
+            "drupal/search": "self.version",
+            "drupal/seven": "self.version",
+            "drupal/shortcut": "self.version",
+            "drupal/standard": "self.version",
+            "drupal/stark": "self.version",
+            "drupal/statistics": "self.version",
+            "drupal/syslog": "self.version",
+            "drupal/system": "self.version",
+            "drupal/taxonomy": "self.version",
+            "drupal/text": "self.version",
+            "drupal/toolbar": "self.version",
+            "drupal/tracker": "self.version",
+            "drupal/translation": "self.version",
+            "drupal/trigger": "self.version",
+            "drupal/update": "self.version",
+            "drupal/user": "self.version"
+        },
+        "suggest": {
+            "drupal/block": "Required by drupal/dashboard, drupal/minimal, drupal/standard",
+            "drupal/color": "Required by drupal/standard",
+            "drupal/comment": "Required by drupal/forum, drupal/tracker, drupal/standard",
+            "drupal/contextual": "Required by drupal/standard",
+            "drupal/dashboard": "Required by drupal/standard",
+            "drupal/dblog": "Required by drupal/minimal, drupal/standard",
+            "drupal/field": "Required by drupal/field_sql_storage, drupal/list, drupal/number, drupal/options, drupal/text, drupal/field_ui, drupal/file",
+            "drupal/field_sql_storage": "Required by drupal/field",
+            "drupal/field_ui": "Required by drupal/standard",
+            "drupal/file": "Required by drupal/image, drupal/standard",
+            "drupal/help": "Required by drupal/standard",
+            "drupal/image": "Required by drupal/standard",
+            "drupal/list": "Required by drupal/standard",
+            "drupal/locale": "Required by drupal/translation",
+            "drupal/menu": "Required by drupal/standard",
+            "drupal/number": "Required by drupal/standard",
+            "drupal/options": "Required by drupal/list, drupal/taxonomy, drupal/standard",
+            "drupal/overlay": "Required by drupal/standard",
+            "drupal/path": "Required by drupal/standard",
+            "drupal/rdf": "Required by drupal/standard",
+            "drupal/search": "Required by drupal/standard",
+            "drupal/shortcut": "Required by drupal/standard",
+            "drupal/taxonomy": "Required by drupal/forum, drupal/standard",
+            "drupal/text": "Required by drupal/comment",
+            "drupal/toolbar": "Required by drupal/standard"
+        },
+        "type": "drupal-core",
+        "extra": {
+            "branch-alias": {
+                "dev-7.x-": "7.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "http://drupal-packagist.webflo.io/downloads/",
+        "description": "Handles general site configuration for administrators."
+    },
+    {
+        "name": "drupal/composer_vendor",
+        "version": "7.1.0",
+        "version_normalized": "7.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "http://git.drupal.org/project/composer_vendor",
+            "reference": "1a0e5e987bac320f9809b0f4a8904039b3155524"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "http://ftp.drupal.org/files/projects/composer_vendor-7.x-1.0.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "drupal/drupal": "7.*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-7.x-1.x": "7.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "http://drupal-packagist.webflo.io/downloads/",
+        "description": "Loads the composer generated autoload from the sites/all/vendor directory."
+    },
+    {
+        "name": "drupal/registry_autoload",
+        "version": "7.1.2",
+        "version_normalized": "7.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "http://git.drupal.org/project/registry_autoload",
+            "reference": "f63864939d27c40f86798c362de73cb63a13c5af"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "http://ftp.drupal.org/files/projects/registry_autoload-7.x-1.2.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "drupal/drupal": "7.*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-7.x-1.x": "7.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "http://drupal-packagist.webflo.io/downloads/",
+        "description": "Adds support for PSR-0 and PSR-4 to the Drupal 7 core registry."
+    },
+    {
+        "name": "drupal/ctools",
+        "version": "7.1.6",
+        "version_normalized": "7.1.6.0",
+        "source": {
+            "type": "git",
+            "url": "http://git.drupal.org/project/ctools",
+            "reference": "51c37d5797fdebff2f5a3c01f8cc207d31341592"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "http://ftp.drupal.org/files/projects/ctools-7.x-1.6.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "drupal/drupal": "7.*"
+        },
+        "replace": {
+            "drupal/bulk_export": "self.version",
+            "drupal/ctools_access_ruleset": "self.version",
+            "drupal/ctools_ajax_sample": "self.version",
+            "drupal/ctools_custom_content": "self.version",
+            "drupal/ctools_plugin_example": "self.version",
+            "drupal/page_manager": "self.version",
+            "drupal/stylizer": "self.version",
+            "drupal/term_depth": "self.version",
+            "drupal/views_content": "self.version"
+        },
+        "suggest": {
+            "drupal/advanced_help": "Required by drupal/ctools_plugin_example",
+            "drupal/color": "Required by drupal/stylizer",
+            "drupal/page_manager": "Required by drupal/ctools_plugin_example",
+            "drupal/panels": "Required by drupal/ctools_plugin_example",
+            "drupal/views": "Required by drupal/views_content"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-7.x-1.x": "7.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "http://drupal-packagist.webflo.io/downloads/",
+        "description": "A library of helpful tools by Merlin of Chaos."
+    },
+    {
+        "name": "drupal/service_container",
+        "version": "dev-7.x-1.x",
+        "version_normalized": "dev-7.x-1.x",
+        "source": {
+            "type": "git",
+            "url": "http://git.drupal.org/project/service_container.git",
+            "reference": "5a216f11ccc90756188e1b9af9f1cb1f86aa49ed"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "http://ftp.drupal.org/files/projects/service_container-7.x-1.x-dev.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "drupal/ctools": "7.*",
+            "drupal/drupal": "7.*",
+            "drupal/registry_autoload": "7.*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-7.x-1.x": "7.1.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "notification-url": "http://drupal-packagist.webflo.io/downloads/",
+        "description": "A light-weight service container based on CTools plugins."
+    },
+    {
+        "name": "drupal/views",
+        "version": "7.3.10",
+        "version_normalized": "7.3.10.0",
+        "source": {
+            "type": "git",
+            "url": "http://git.drupal.org/project/views",
+            "reference": "f4e8b47ff8adecbb00eb921a978dfe0b6a278539"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "http://ftp.drupal.org/files/projects/views-7.x-3.10.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "drupal/ctools": "7.*",
+            "drupal/drupal": "7.*"
+        },
+        "replace": {
+            "drupal/views_ui": "self.version"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-7.x-3.x": "7.3.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "http://drupal-packagist.webflo.io/downloads/",
+        "description": "Create customized lists and queries from your database."
+    },
+    {
+        "name": "drupal/libraries",
+        "version": "7.2.2",
+        "version_normalized": "7.2.2.0",
+        "source": {
+            "type": "git",
+            "url": "http://git.drupal.org/project/libraries",
+            "reference": "744cd04d1c78a08d10b511f67904f0839baf94ec"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "http://ftp.drupal.org/files/projects/libraries-7.x-2.2.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "drupal/drupal": "7.*",
+            "drupal/system": ">=7.11.0"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-7.x-2.x": "7.2.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "http://drupal-packagist.webflo.io/downloads/",
+        "description": "Allows version-dependent and shared usage of external libraries."
+    },
+    {
+        "name": "drupal/proj4js",
+        "version": "7.1.2",
+        "version_normalized": "7.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "http://git.drupal.org/project/proj4js",
+            "reference": "bd2543d3b16af2f1fcb36cab0a4e19d90aad6cac"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "http://ftp.drupal.org/files/projects/proj4js-7.x-1.2.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "drupal/drupal": "7.*",
+            "drupal/libraries": "7.*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-7.x-1.x": "7.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "http://drupal-packagist.webflo.io/downloads/",
+        "description": "Proj4JS library loader."
+    },
+    {
+        "name": "drupal/jquery_update",
+        "version": "7.2.5",
+        "version_normalized": "7.2.5.0",
+        "source": {
+            "type": "git",
+            "url": "http://git.drupal.org/project/jquery_update",
+            "reference": "1ad9a087632a4a849f553315df2bcdb8d38bee2a"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "http://ftp.drupal.org/files/projects/jquery_update-7.x-2.5.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "drupal/drupal": "7.*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-7.x-2.x": "7.2.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "http://drupal-packagist.webflo.io/downloads/",
+        "description": "Update jQuery and jQuery UI to a more recent version."
+    },
+    {
+        "name": "drupal/openlayers",
+        "version": "7.3.0-beta1",
+        "version_normalized": "7.3.0.0-beta1",
+        "source": {
+            "type": "git",
+            "url": "http://git.drupal.org/project/openlayers",
+            "reference": "1afdf180d38bad4cfa10c2d116ca88b87b16e838"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "http://ftp.drupal.org/files/projects/openlayers-7.x-3.0-beta1.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "drupal/ctools": "7.*",
+            "drupal/drupal": "7.*",
+            "drupal/file": "7.*",
+            "drupal/image": "7.*",
+            "drupal/jquery_update": "7.*",
+            "drupal/libraries": ">=7.2.1",
+            "drupal/registry_autoload": "7.*",
+            "drupal/service_container": "7.*"
+        },
+        "replace": {
+            "drupal/openlayers_block": "self.version",
+            "drupal/openlayers_block_switcher": "self.version",
+            "drupal/openlayers_contextual_links": "self.version",
+            "drupal/openlayers_examples": "self.version",
+            "drupal/openlayers_geofield": "self.version",
+            "drupal/openlayers_services": "self.version",
+            "drupal/openlayers_ui": "self.version",
+            "drupal/openlayers_views": "self.version"
+        },
+        "suggest": {
+            "drupal/block": "Required by drupal/openlayers_block",
+            "drupal/contextual": "Required by drupal/openlayers_contextual_links",
+            "drupal/geofield": "Required by drupal/openlayers_geofield",
+            "drupal/geophp": "Required by drupal/openlayers_views",
+            "drupal/openlayers_block_switcher": "Required by drupal/openlayers_examples",
+            "drupal/openlayers_geofield": "Required by drupal/openlayers_examples",
+            "drupal/openlayers_ui": "Required by drupal/openlayers_contextual_links",
+            "drupal/rest_server": "Required by drupal/openlayers_services",
+            "drupal/services": "Required by drupal/openlayers_services",
+            "drupal/services_rrf": "Required by drupal/openlayers_services",
+            "drupal/views": "Required by drupal/openlayers_views",
+            "drupal/views_geojson": "Required by drupal/openlayers_examples"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-7.x-3.x": "7.3.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "http://drupal-packagist.webflo.io/downloads/",
+        "description": "OpenLayers base API module"
+    },
+    {
+        "name": "drupal/geophp",
+        "version": "7.1.7",
+        "version_normalized": "7.1.7.0",
+        "source": {
+            "type": "git",
+            "url": "http://git.drupal.org/project/geophp",
+            "reference": "b8c3fd126e63a149cd17f247198504ac65f4fbf4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "http://ftp.drupal.org/files/projects/geophp-7.x-1.7.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "drupal/drupal": "7.*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-7.x-1.x": "7.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "http://drupal-packagist.webflo.io/downloads/",
+        "description": "Wraps the geoPHP library: advanced geometry operations in PHP"
+    },
+    {
+        "name": "drupal/geofield",
+        "version": "7.2.3",
+        "version_normalized": "7.2.3.0",
+        "source": {
+            "type": "git",
+            "url": "http://git.drupal.org/project/geofield",
+            "reference": "400ac2668e2bb996387bdbef48b1beb79b354054"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "http://ftp.drupal.org/files/projects/geofield-7.x-2.3.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "drupal/ctools": "7.*",
+            "drupal/drupal": "7.*",
+            "drupal/geophp": ">=7.1.7"
+        },
+        "replace": {
+            "drupal/geofield_map": "self.version"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-7.x-2.x": "7.2.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "http://drupal-packagist.webflo.io/downloads/",
+        "description": "Stores geographic and location data (points, lines, and polygons)."
+    },
+    {
+        "name": "drupal/geocoder",
+        "version": "7.1.2",
+        "version_normalized": "7.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "http://git.drupal.org/project/geocoder",
+            "reference": "c7d29989409a3790ebe2aabbf2f1a8a73e05d0bb"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "http://ftp.drupal.org/files/projects/geocoder-7.x-1.2.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "drupal/ctools": "7.*",
+            "drupal/drupal": "7.*",
+            "drupal/geophp": "7.*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-7.x-1.x": "7.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "http://drupal-packagist.webflo.io/downloads/",
+        "description": "An API and widget to geocode various known data into other GIS data types."
+    },
+    {
+        "name": "drupal/features",
+        "version": "7.2.4",
+        "version_normalized": "7.2.4.0",
+        "source": {
+            "type": "git",
+            "url": "http://git.drupal.org/project/features",
+            "reference": "5a9dbd0992be60cd0297f2623ef000e3a0d79fb4"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "http://ftp.drupal.org/files/projects/features-7.x-2.4.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "drupal/drupal": "7.*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-7.x-2.x": "7.2.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "http://drupal-packagist.webflo.io/downloads/",
+        "description": "Provides feature management for Drupal."
+    },
+    {
+        "name": "drupal/addressfield",
+        "version": "7.1.0",
+        "version_normalized": "7.1.0.0",
+        "source": {
+            "type": "git",
+            "url": "http://git.drupal.org/project/addressfield",
+            "reference": "8acc6c9ad58f98496de87d6189526bb44c46df8f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "http://ftp.drupal.org/files/projects/addressfield-7.x-1.0.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "drupal/ctools": "7.*",
+            "drupal/drupal": "7.*"
+        },
+        "replace": {
+            "drupal/addressfield_example": "self.version"
+        },
+        "suggest": {
+            "drupal/ctools": "Required by drupal/addressfield_example"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-7.x-1.x": "7.1.x-dev"
+            }
+        },
+        "installation-source": "dist",
+        "notification-url": "http://drupal-packagist.webflo.io/downloads/",
+        "description": "Manage a flexible address field, implementing the xNAL standard."
+    },
+    {
+        "name": "drupal/ol_locator",
+        "version": "dev-7.x-2.x",
+        "version_normalized": "dev-7.x-2.x",
+        "source": {
+            "type": "git",
+            "url": "http://git.drupal.org/project/ol_locator.git",
+            "reference": "72ed6dffca25ac28790398186e3667076b3fbe09"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "http://ftp.drupal.org/files/projects/ol_locator-7.x-2.x-dev.zip",
+            "reference": null,
+            "shasum": null
+        },
+        "require": {
+            "drupal/addressfield": "7.*",
+            "drupal/ctools": "7.*",
+            "drupal/drupal": "7.*",
+            "drupal/features": "7.*",
+            "drupal/geocoder": "7.*",
+            "drupal/geofield": "7.*",
+            "drupal/geofield_map": "7.*",
+            "drupal/libraries": "7.*",
+            "drupal/openlayers": "7.*",
+            "drupal/openlayers_views": "7.*",
+            "drupal/proj4js": "7.*",
+            "drupal/text": "7.*",
+            "drupal/views": "7.*"
+        },
+        "type": "drupal-module",
+        "extra": {
+            "branch-alias": {
+                "dev-7.x-2.x": "7.2.x-dev"
+            }
+        },
+        "installation-source": "source",
+        "notification-url": "http://drupal-packagist.webflo.io/downloads/",
+        "description": "Provides a location content type that geocodes address information and creates a map that allows users to do proximity searches."
+    }
+]

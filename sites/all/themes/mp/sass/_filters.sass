@@ -1,0 +1,333 @@
+//colors
+$white: #fff
+$gray:  gray
+$silver: silver
+$black: #000
+$red: red
+$color_bon_jour_approx: #e0e0e0
+$color_mariner_approx: #3169c6
+$color_hawkes_blue_approx: #cbe8f6
+
+//fonts
+$font_0: tahoma
+$font_1: arial
+$font_2: helvetica
+
+//urls
+$url_0: url(../images/source/loading.gif)
+
+//@extend-elements
+//original selectors
+//#fancytree-drop-marker, span.fancytree-checkbox, span.fancytree-drag-helper-img, span.fancytree-empty, span.fancytree-expander, span.fancytree-icon, span.fancytree-radio, span.fancytree-vline
+%extend_1 
+  width: 1em
+  height: 1em
+  display: inline-block
+  vertical-align: top
+  background-repeat: no-repeat
+  background-position: left
+  background-position: 0 0
+
+
+
+.ui-helper-hidden 
+  display: none
+
+ul 
+  &.fancytree-container 
+    font-family: $font_0, $font_1, $font_2
+    font-size: 10pt
+    white-space: nowrap
+    padding: 3px
+    margin: 0
+    // background-color: $white
+    border: 1px dotted $gray
+    overflow: auto
+    min-height: 0
+    position: relative
+    li 
+      list-style-image: none
+      list-style-position: outside
+      list-style-type: none
+      background-attachment: scroll
+      background-color: transparent
+      background-position: 0 0
+      background-repeat: repeat-y
+      background-image: none
+      margin: 0
+      &.fancytree-lastsib 
+        background-image: none
+    
+  
+    ul 
+      padding: .3em 0 0 1em
+      margin: 0
+  
+
+  &.fancytree-ext-wide 
+    position: relative
+    min-width: 100%
+    z-index: 2
+    //Instead of the line below you could use @includebox-sizing($bs)
+    box-sizing: border-box
+    span.fancytree-node 
+      > span 
+        position: relative
+        z-index: 2
+    
+      span.fancytree-title 
+        position: absolute
+        z-index: 1
+        left: 0
+        width: 100%
+        margin-left: 0
+        margin-right: 0
+        //Instead of the line below you could use @includebox-sizing($bs)
+        box-sizing: border-box
+    
+  
+
+  &.fancytree-no-connector > li 
+    background-image: none
+
+
+#fancytree-drop-marker 
+  @extend %extend_1
+  width: 2em
+  position: absolute
+  margin: 0
+  &.fancytree-drop-after 
+    width: 4em
+
+  &.fancytree-drop-before 
+    width: 4em
+
+
+span 
+  &.fancytree-checkbox
+    display: inline-block
+    cursor: pointer
+    vertical-align: top
+    @include background-image(url("../images/source/checkbox.png"))
+    background-repeat: no-repeat
+    background-position: left
+    background-position: 0 0
+    background-size: 100%
+    width: 20px
+    height: 20px
+    margin-top: 0
+    margin-left: .5em
+
+  &.fancytree-drag-helper-img 
+    @extend %extend_1
+
+  &.fancytree-empty 
+    @extend %extend_1
+
+  &.fancytree-expander 
+    @extend %extend_1
+    margin-top: 0
+    cursor: pointer
+
+  &.fancytree-icon 
+    @extend %extend_1
+    margin-top: 0
+    margin-left: .5em
+
+  &.fancytree-radio 
+    @extend %extend_1
+    margin-top: 0
+
+  &.fancytree-vline 
+    @extend %extend_1
+
+  &.fancytree-custom-icon 
+    margin-top: 0
+    display: inline-block
+
+  &.fancytree-node 
+    display: inherit
+    width: 100%
+    margin-top: 1px
+    min-height: 1em
+    &.fancytree-selected
+      .fancytree-checkbox
+        @include background-image(url("../images/source/check.png"))
+        background-size: 100%
+        background-position: 0 0
+        background-repeat: no-repeat
+
+    &.fancytree-error span.fancytree-title 
+      color: $red
+  
+
+  &.fancytree-title 
+    color: $black
+    // cursor: pointer
+    display: inline-block
+    vertical-align: top
+    min-height: 1em
+    padding: 0 3px
+    margin: 0 0 0 .5em
+    border: 1px solid transparent
+    //Instead of the line below you could use @includeborder-radius($radius, $vertical-radius)
+    border-radius: 0
+
+  &.fancytree-drag-source 
+    background-color: $color_bon_jour_approx
+    span.fancytree.title 
+      color: $gray
+  
+
+  &.fancytree-drop-target.fancytree-drop-accept a 
+    background-color: $color_mariner_approx !important
+    color: $white !important
+    text-decoration: none
+
+
+table 
+  &.fancytree-ext-table 
+    border-collapse: collapse
+    span.fancytree-node 
+      display: inline-block
+  
+
+  &.fancytree-ext-columnview 
+    tbody tr td 
+      position: relative
+      border: 1px solid $gray
+      vertical-align: top
+      overflow: auto
+      > ul 
+        padding: 0
+        li 
+          list-style-image: none
+          list-style-position: outside
+          list-style-type: none
+          background-attachment: scroll
+          background-color: transparent
+          background-position: 0 0
+          background-repeat: repeat-y
+          background-image: none
+          margin: 0
+      
+    
+  
+    span.fancytree-node 
+      position: relative
+      display: inline-block
+      &.fancytree-expanded 
+        background-color: $color_hawkes_blue_approx
+    
+  
+    .fancytree-has-children span.fancytree-cv-right 
+      position: absolute
+      right: 3px
+  
+
+
+.fancytree-ext-filter-dimm 
+  tr 
+    &.fancytree-submatch span.fancytree-title 
+      color: $black
+      font-weight: 400
+  
+    &.fancytree-match span.fancytree-title 
+      color: $black
+      font-weight: 700
+  
+
+  span.fancytree-node 
+    span.fancytree-title 
+      color: $silver
+      font-weight: lighter
+  
+    &.fancytree-submatch span.fancytree-title 
+      color: $black
+      font-weight: 400
+  
+    &.fancytree-match span.fancytree-title 
+      color: $black
+      font-weight: 700
+  
+
+
+.fancytree-ext-filter-hide 
+  tr 
+    &.fancytree-hide 
+      display: none
+  
+    &.fancytree-submatch span.fancytree-title 
+      color: $silver
+      font-weight: lighter
+  
+    &.fancytree-match span.fancytree-title 
+      color: $black
+      font-weight: 400
+  
+
+  span.fancytree-node 
+    &.fancytree-hide 
+      display: none
+  
+    &.fancytree-submatch span.fancytree-title 
+      color: $silver
+      font-weight: lighter
+  
+    &.fancytree-match span.fancytree-title 
+      color: $black
+      font-weight: 400
+  
+
+
+.ui-fancytree-disabled ul.fancytree-container 
+  opacity: .5
+  background-color: $silver
+
+img.fancytree-icon 
+  width: 1em
+  height: 1em
+  margin-left: .5em
+  margin-top: 0
+  vertical-align: top
+  border-style: none
+
+.fancytree-exp-n span.fancytree-expander 
+  background-image: none
+  cursor: default
+
+.fancytree-exp-nl span.fancytree-expander 
+  background-image: none
+  cursor: default
+
+.fancytree-unselectable span.fancytree-checkbox 
+  opacity: .4
+  filter: alpha(opacity=40)
+  &:hover 
+    opacity: .4
+    filter: alpha(opacity=40)
+
+
+.fancytree-loading span.fancytree-expander 
+  background-image: $url_0
+  &:hover 
+    background-image: $url_0
+
+
+.fancytree-statusnode-wait span.fancytree-icon 
+  background-image: $url_0
+  &:hover 
+    background-image: $url_0
+
+
+div.fancytree-drag-helper 
+  a 
+    border: 1px solid $gray
+    background-color: $white
+    padding-left: 5px
+    padding-right: 5px
+    opacity: .8
+
+  &.fancytree-drop-reject 
+    border-color: $red
+
