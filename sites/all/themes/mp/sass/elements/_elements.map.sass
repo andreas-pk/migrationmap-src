@@ -1,4 +1,6 @@
-#map_canvas 
+$popup-slider-nav-dim: 25px
+
+#map_canvas
   width: 100%
 
 #map_canvas img 
@@ -6,10 +8,70 @@
 // to prevent UI control bug
 
 
-.popup
-  .content
-    padding: 0 0.5em 1em 0.5em
+.ol-popup
+  padding: 5px
+  @include border-radius(0px)
 
+  .cluster-popup-wrapper
+    position: relative
+    padding: 0 $popup-slider-nav-dim
+    margin: -10px
+
+    .prev, .next
+      @include background-image(url("../images/source/right.png"))
+      background-size: 100%
+      position: absolute
+      top: 50%
+      width: $popup-slider-nav-dim
+      height: $popup-slider-nav-dim
+      display: inline-block
+      cursor: pointer
+
+    .prev
+      @include background-image(url("../images/source/left.png"))
+      margin: 0 5px 0 0
+      left: 0
+
+    .next
+      right: 0
+      margin: 0 0 0 5px
+
+    .cluster-slide-wrapper
+      display: none
+      &.visible
+        display: inline-block
+        margin: 5px
+
+  .ol-popup-closer
+    color: #37393e
+    &:hover, &:visited
+      text-decoration: none
+
+#popup-content
+  padding: 10px
+  .ol-popup-logo
+    float: left
+    margin-right: 5px
+
+  .ol-popup-name
+    font-weight: bold
+    clear: right
+
+  .ol-popup-category
+    font-size: 10px
+    line-height: 10px
+    float: right
+    padding: 3px
+    margin-right: 15px
+    margin-top: -9px
+    border-radius: 2px
+    background-color: rgba(113, 154, 203, 0.48)
+
+.ol-popup-category
+  #popup-content .multiple &
+    margin-right: 0
+    margin-right: -5px
+    margin-top: -4px
 
 #map_canvas .firstHeading 
   font-size: 1em
@@ -17,6 +79,21 @@
   font-weight: bold
   margin: 0
 
+.front
+  .ol-control
+    left: 95px
+    border: 1px solid #c2c2c2
+    background-color: rgba(#F2F2F2, 0.9)
+
+  .ol-control.ol-zoom
+    top: 60px
+
+  .ol-control.ol-zoomslider
+    top: 125px
+    width: 32px
+
+  .ol-attribution
+    display: none
 
 #map_canvas #bodyContent p 
   font-size: 1em

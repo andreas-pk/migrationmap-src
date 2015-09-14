@@ -1,4 +1,6 @@
 // Font styles.
+@import url(https://fonts.googleapis.com/css?family=Open+Sans)
+
 body
   margin: 0
   // Setting up font size, leading and font family
@@ -19,11 +21,17 @@ a
 
 // Titles.
 #site-name
+  font-family: 'Open Sans', sans-serif
   font-size: 2.2em
   line-height: 1.3em
   font-weight: 300
   padding: 0 0 0.5em
   margin: 0
+
+#site-slogan
+  font-family: 'Open Sans Semi-Bold', sans-serif
+  font-size: 30px
+  font-style: italic
 
 h1, h2, h3, h4, h5, h6
   line-height: 1.3em
@@ -156,15 +164,22 @@ div.status
 // Region Colors. delete when starting a new theme.
 #header, #footer,
 #sidebar-first
-  background: rgba(#222, 0.4)
+  background: rgba(#F0F0F0, 1)
+
+#sidebar-first
+  border-radius: 5px
+  border: 1px solid #c2c2c2
   #filter
     ul
-      background: rgba(#222, 0.2)
-      color: #fff
+      //background: rgba(#222, 0.2)
+      //color: #fff
 
 #sidebar-second,
 #navigation
   background: rgba(#aaa, 0.2)
+
+.field-name-field-location
+  float: right
 
 // Import custom styles.
 @import _custom.sass

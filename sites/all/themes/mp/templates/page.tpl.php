@@ -26,7 +26,7 @@
           <?php endif; ?>
 
           <?php if ($site_slogan): ?>
-            <div id="site-slogan"><?php print $site_slogan; ?></div>
+            <div id="site-slogan"><?php print t($site_slogan); ?></div>
           <?php endif; ?>
 
         </div>
@@ -56,7 +56,7 @@
     <div class="container">
       <section id="content">
   
-          <?php if ($breadcrumb || $title|| $messages || $tabs || $action_links): ?>
+          <?php if (($breadcrumb || $title|| $messages || $tabs || $action_links) && !($is_front)): ?>
             <div id="content-header">
 
               <?php print $breadcrumb; ?>

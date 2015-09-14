@@ -95,6 +95,9 @@ function mp_preprocess_html(&$vars) {
 }
 
 function mp_preprocess_page(&$vars, $hook) {
+  // add theme path to Drupal settings
+  drupal_add_js('jQuery.extend(Drupal.settings, { "themePath": "/' . path_to_theme() . '" });', 'inline');
+
   if (isset($vars['node_title'])) {
     $vars['title'] = $vars['node_title'];
   }
