@@ -98,6 +98,25 @@ function map_views_default_views() {
   $handler->display->display_options['fields']['machine_name_1']['relationship'] = 'field_location_category_target_id';
   $handler->display->display_options['fields']['machine_name_1']['label'] = 'machine_name';
   $handler->display->display_options['fields']['machine_name_1']['element_label_colon'] = FALSE;
+  /* Field: Content: Logo */
+  $handler->display->display_options['fields']['field_location_logo']['id'] = 'field_location_logo';
+  $handler->display->display_options['fields']['field_location_logo']['table'] = 'field_data_field_location_logo';
+  $handler->display->display_options['fields']['field_location_logo']['field'] = 'field_location_logo';
+  $handler->display->display_options['fields']['field_location_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_location_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_location_logo']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_location_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_location_logo']['settings'] = array(
+    'image_style' => 'logo_popup_50x50',
+    'image_link' => '',
+  );
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['text'] = 'more';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';

@@ -7,6 +7,10 @@ body
   //  http://www.markboulton.co.uk/journal/comments/five-simple-steps-to-better-typography
   font: 16px / 1.5em "Helvetica Neue", helvetica, Arial, sans-serif
   letter-spacing: 0.03em
+  background-color: rgba(#F0F0F0, 1)
+
+  #main
+    background-color: #fff
 
 // Links
 a
@@ -31,7 +35,6 @@ a
 #site-slogan
   font-family: 'Open Sans Semi-Bold', sans-serif
   font-size: 30px
-  font-style: italic
 
 h1, h2, h3, h4, h5, h6
   line-height: 1.3em
@@ -162,9 +165,25 @@ div.status
   border-color: #bbee77
 
 // Region Colors. delete when starting a new theme.
-#header, #footer,
+#head, #header, #footer,
 #sidebar-first
   background: rgba(#F0F0F0, 1)
+
+#head
+  padding-left: 220px
+  padding-top: 30px
+
+#logo
+  background-image: url("../images/source/logo.png")
+  background-repeat: no-repeat
+  background-size: 100%
+  padding: 20px
+  position: absolute
+  top: 7px
+  left: 50px
+  width: 145px
+  height: 105px
+  transform: rotate(3deg)
 
 #sidebar-first
   border-radius: 5px
@@ -176,11 +195,14 @@ div.status
 
 #sidebar-second,
 #navigation
-  background: rgba(#aaa, 0.2)
+  background: rgba(#aaa,0)
 
 .field-name-field-location
   float: right
 
+
+#block-system-powered-by
+  font-size: 13px
 // Import custom styles.
 @import _custom.sass
 

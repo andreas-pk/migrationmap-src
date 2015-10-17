@@ -18,6 +18,11 @@
     .container {
       width: auto; } }
 
+#head #block-lang_dropdown-language_content {
+  position: absolute;
+  right: 30px;
+  top: 10px; }
+
 .no-sidebars #content {
   float: left;
   display: block;

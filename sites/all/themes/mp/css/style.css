@@ -2,7 +2,10 @@
 body {
   margin: 0;
   font: 16px/1.5em "Helvetica Neue", helvetica, Arial, sans-serif;
-  letter-spacing: 0.03em; }
+  letter-spacing: 0.03em;
+  background-color: #f0f0f0; }
+  body #main {
+    background-color: #fff; }
 
 a:link, a:visited {
   color: blue;
@@ -22,8 +25,7 @@ a:hover, a:active {
 
 #site-slogan {
   font-family: "Open Sans Semi-Bold", sans-serif;
-  font-size: 30px;
-  font-style: italic; }
+  font-size: 30px; }
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.3em; }
@@ -144,9 +146,25 @@ div.status {
   background: #ccff88;
   border-color: #bbee77; }
 
-#header, #footer,
+#head, #header, #footer,
 #sidebar-first {
   background: #f0f0f0; }
+
+#head {
+  padding-left: 220px;
+  padding-top: 30px; }
+
+#logo {
+  background-image: url("../images/source/logo.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 20px;
+  position: absolute;
+  top: 7px;
+  left: 50px;
+  width: 145px;
+  height: 105px;
+  transform: rotate(3deg); }
 
 #sidebar-first {
   border-radius: 5px;
@@ -154,10 +172,13 @@ div.status {
 
 #sidebar-second,
 #navigation {
-  background: rgba(170, 170, 170, 0.2); }
+  background: rgba(170, 170, 170, 0); }
 
 .field-name-field-location {
   float: right; }
+
+#block-system-powered-by {
+  font-size: 13px; }
 
 * {
   -webkit-box-sizing: border-box;
@@ -497,6 +518,9 @@ div.fancytree-drag-helper.fancytree-drop-reject {
 .front #first-time,
 .front .title {
   display: none; }
+
+.page-node .title {
+  margin-top: 40px; }
 
 * {
   -webkit-box-sizing: border-box;
