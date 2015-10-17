@@ -1,0 +1,23 @@
+# Turkish translation of Taxonomy Machine Name (7.x-1.0)
+# Copyright (c) 2015 by the Turkish translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Taxonomy Machine Name (7.x-1.0)\n"
+"POT-Creation-Date: 2015-05-13 00:53+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Turkish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Delete"
+msgstr "Sil"
+msgid "Other"
+msgstr "Diğer"
+msgid "taxonomy"
+msgstr "sınıflandırma"
+msgid "Machine name"
+msgstr "Makine adı"
+msgid "The machine-readable name cannot be \"add\" or \"list\"."
+msgstr "Makine ismi \"add\" veya \"list\" olamaz."

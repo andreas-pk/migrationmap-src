@@ -35,6 +35,11 @@ function map_views_default_views() {
   $handler->display->display_options['relationships']['field_location_category_target_id']['id'] = 'field_location_category_target_id';
   $handler->display->display_options['relationships']['field_location_category_target_id']['table'] = 'field_data_field_location_category';
   $handler->display->display_options['relationships']['field_location_category_target_id']['field'] = 'field_location_category_target_id';
+  /* Relationship: Taxonomy term: Parent term */
+  $handler->display->display_options['relationships']['parent']['id'] = 'parent';
+  $handler->display->display_options['relationships']['parent']['table'] = 'taxonomy_term_hierarchy';
+  $handler->display->display_options['relationships']['parent']['field'] = 'parent';
+  $handler->display->display_options['relationships']['parent']['relationship'] = 'field_location_category_target_id';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -79,6 +84,39 @@ function map_views_default_views() {
   $handler->display->display_options['fields']['tid']['label'] = '';
   $handler->display->display_options['fields']['tid']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['tid']['separator'] = '';
+  /* Field: Taxonomy term: Machine name */
+  $handler->display->display_options['fields']['machine_name']['id'] = 'machine_name';
+  $handler->display->display_options['fields']['machine_name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['machine_name']['field'] = 'machine_name';
+  $handler->display->display_options['fields']['machine_name']['relationship'] = 'parent';
+  $handler->display->display_options['fields']['machine_name']['label'] = 'parent_machine_name';
+  $handler->display->display_options['fields']['machine_name']['element_label_colon'] = FALSE;
+  /* Field: Taxonomy term: Machine name */
+  $handler->display->display_options['fields']['machine_name_1']['id'] = 'machine_name_1';
+  $handler->display->display_options['fields']['machine_name_1']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['machine_name_1']['field'] = 'machine_name';
+  $handler->display->display_options['fields']['machine_name_1']['relationship'] = 'field_location_category_target_id';
+  $handler->display->display_options['fields']['machine_name_1']['label'] = 'machine_name';
+  $handler->display->display_options['fields']['machine_name_1']['element_label_colon'] = FALSE;
+  /* Field: Content: Logo */
+  $handler->display->display_options['fields']['field_location_logo']['id'] = 'field_location_logo';
+  $handler->display->display_options['fields']['field_location_logo']['table'] = 'field_data_field_location_logo';
+  $handler->display->display_options['fields']['field_location_logo']['field'] = 'field_location_logo';
+  $handler->display->display_options['fields']['field_location_logo']['label'] = '';
+  $handler->display->display_options['fields']['field_location_logo']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_location_logo']['hide_empty'] = TRUE;
+  $handler->display->display_options['fields']['field_location_logo']['click_sort_column'] = 'fid';
+  $handler->display->display_options['fields']['field_location_logo']['settings'] = array(
+    'image_style' => 'logo_popup_50x50',
+    'image_link' => '',
+  );
+  /* Field: Content: Link */
+  $handler->display->display_options['fields']['view_node']['id'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['table'] = 'views_entity_node';
+  $handler->display->display_options['fields']['view_node']['field'] = 'view_node';
+  $handler->display->display_options['fields']['view_node']['label'] = '';
+  $handler->display->display_options['fields']['view_node']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['view_node']['text'] = 'more';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -137,7 +175,10 @@ function map_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Taxonomy term entity referenced from field_location_category'),
+    t('Parent'),
     t('.'),
+    t('parent_machine_name'),
+    t('machine_name'),
     t('All'),
     t('Location GeoJSON Feed'),
   );

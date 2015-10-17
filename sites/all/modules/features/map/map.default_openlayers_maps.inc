@@ -19,7 +19,7 @@ function map_default_openlayers_maps() {
   $ol_map->factory_service = 'openlayers.map.internal.OLMap';
   $ol_map->options = array(
     'provideBlock' => 1,
-    'provideBlockLayerSwitcher' => 1,
+    'provideBlockLayerSwitcher' => 0,
     'contextualLinks' => 1,
     'provideIframe' => 0,
     'width' => 'auto',

@@ -1,0 +1,24 @@
+# Spanish translation of Taxonomy Machine Name (7.x-1.0)
+# Copyright (c) 2015 by the Spanish translation team
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Taxonomy Machine Name (7.x-1.0)\n"
+"POT-Creation-Date: 2015-05-13 00:53+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Spanish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "Delete"
+msgstr "Eliminar"
+msgid "Other"
+msgstr "Otro(s)"
+msgid "taxonomy"
+msgstr "taxonomía"
+msgid "Machine name"
+msgstr "Nombre de sistema"
+msgid "The machine-readable name cannot be \"add\" or \"list\"."
+msgstr "El nombre de sistema no se puede «agregar» o «listar»."

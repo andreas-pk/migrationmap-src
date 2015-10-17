@@ -60,7 +60,7 @@ function map_default_openlayers_layers() {
   $ol_layer->options = array(
     'source' => 'openlayers_examples_source_cluster_pdm',
     'visible' => 1,
-    'style' => 'openlayers_examples_style_blue_marker',
+    'style' => 'locations_pdm_style',
   );
   $export['openlayers_examples_layer_cluster_cities_pdm'] = $ol_layer;
 
