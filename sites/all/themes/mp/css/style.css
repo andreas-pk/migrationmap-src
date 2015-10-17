@@ -508,6 +508,9 @@ div.fancytree-drag-helper.fancytree-drop-reject {
   font-size: 1em;
   margin: 0; }
 
+.field-name-field-location {
+  width: 600px; }
+
 .main-menu li {
   border-right: 2px solid #000;
   margin: 5px 0;

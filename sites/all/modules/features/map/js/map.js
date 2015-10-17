@@ -11,7 +11,7 @@ Drupal.behaviors.map = {
       map.layers['openlayers_examples_layer_cluster_cities_pdm'].setStyle(addIconStyle);
     }
     if(map.layers['geofield_field_formatter_layer'] != undefined) {
-      //map.layers['geofield_field_formatter_layer'].setStyle(addIconStyle);
+      map.layers['geofield_field_formatter_layer'].setStyle(addIconStyle);
     }
   }
 };
@@ -100,17 +100,30 @@ var findGeoJSONFeedInSources = function(sources) {
     }
   }
 };
-
+/**
+ * Helper function to return feature style depending on a single feature or a cluster.
+ * @param feature
+ * @param resolution
+ * @returns {*[]}
+ */
 var addIconStyle = function(feature, resolution) {
   // return for empty features
   if (feature === undefined) return;
   var iconStyle = {};
-  feature = feature.get('features');
+  var featureContent = feature.get('features');
+  if (featureContent === undefined) {
+    featureContent = feature.get('geometry');
+  }
+  console.log(featureContent, 'f-a');
   // different iconStyles for single and clustered features
-  if (feature.length == 1) {
-    iconStyle = singleFeatureStyle(feature[0]);
+  if (featureContent.length == 1) {
+    iconStyle = singleFeatureStyle(featureContent[0]);
   } else {
-    iconStyle = clusterStyle(feature);
+    if(featureContent.layout === 'XY') {
+      iconStyle = singleFeatureStyle(featureContent);
+    } else {
+      iconStyle = clusterStyle(featureContent);
+    }
   }
   // console.log(resolution, 'r');
   return [iconStyle];
@@ -142,7 +155,11 @@ var clusterStyle = function (feature) {
 // depending on its category
 var singleFeatureStyle = function (feature) {
   // get category
-  var icon_image_name = feature.get('parent_machine_name') || feature.get('machine_name') || 'default-marker';
+  if (feature.layout === 'XY') {
+    var icon_image_name = 'default-marker';
+  } else {
+    var icon_image_name = feature.get('parent_machine_name') || feature.get('machine_name') || 'default-marker';
+  }
   // default iconStyle
   return new ol.style.Style({
     image: new ol.style.Icon( ({
