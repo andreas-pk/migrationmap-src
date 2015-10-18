@@ -112,13 +112,13 @@ function map_default_openlayers_maps() {
   $ol_map->options = array(
     'width' => 'auto',
     'height' => '300px',
-    'contextualLinks' => 1,
-    'provideBlock' => 1,
-    'provideIframe' => 1,
+    'contextualLinks' => 0,
+    'provideBlock' => 0,
+    'provideIframe' => 0,
     'view' => array(
       'center' => array(
-        'lat' => '13.0732940309871',
-        'lon' => '52.398143417957925',
+        'lat' => '13.073294030987',
+        'lon' => '52.39814341795801',
       ),
       'rotation' => '0',
       'zoom' => '13',

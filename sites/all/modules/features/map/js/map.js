@@ -115,17 +115,14 @@ var addIconStyle = function(feature, resolution) {
     featureContent = feature.get('geometry');
   }
   // different iconStyles for single and clustered features
-  if (featureContent.length == 1) {
-    iconStyle = singleFeatureStyle(featureContent[0]);
-  } else {
-    if(featureContent.layout === 'XY') {
-      iconStyle = singleFeatureStyle(featureContent);
-    } else {
-      iconStyle = clusterStyle(featureContent);
-    }
+  if (featureContent instanceof ol.geom.Point) {
+    return [singleFeatureStyle(featureContent)];
   }
-  // console.log(resolution, 'r');
-  return [iconStyle];
+  if (featureContent.length == 1) {
+    return [singleFeatureStyle(featureContent[0])];
+  } else {
+    return [clusterStyle(featureContent)];
+  }
 };
 
 // small help function which returns the style for clustered features
@@ -154,7 +151,7 @@ var clusterStyle = function (feature) {
 // depending on its category
 var singleFeatureStyle = function (feature) {
   // get category
-  if (feature.layout === 'XY') {
+  if (feature instanceof ol.geom.Point) {
     var icon_image_name = 'default-marker';
   } else {
     var icon_image_name = feature.get('parent_machine_name') || feature.get('machine_name') || 'default-marker';
