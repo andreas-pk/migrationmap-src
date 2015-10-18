@@ -469,7 +469,8 @@ div.fancytree-drag-helper.fancytree-drop-reject {
   min-width: 200px; }
   #popup-content .ol-popup-logo {
     float: left;
-    margin-right: 5px; }
+    margin-top: 10px;
+    padding-right: 10px; }
   #popup-content .ol-popup-name {
     font-weight: bold;
     clear: right; }
