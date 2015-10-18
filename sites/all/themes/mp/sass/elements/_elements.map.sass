@@ -49,6 +49,8 @@ $popup-slider-nav-dim: 25px
 
 #popup-content
   padding: 10px
+  max-width: 350px
+  min-width: 200px
   .ol-popup-logo
     float: left
     margin-right: 5px
@@ -66,6 +68,19 @@ $popup-slider-nav-dim: 25px
     margin-top: -9px
     border-radius: 2px
     background-color: rgba(113, 154, 203, 0.48)
+
+  .ol-popup-description
+    display: inline
+    max-width: 350px
+    white-space: normal
+    p
+      max-width: 290px
+      min-width: 240px
+      font-size: 85%
+
+    //white-space: nowrap
+    //overflow: hidden
+    //text-overflow: clip
 
 .ol-popup-category
   #popup-content .multiple &

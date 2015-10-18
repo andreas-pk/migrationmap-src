@@ -87,7 +87,7 @@ Drupal.openlayers.pluginManager.register({
       innerHtml +=  '<div class="ol-popup-logo">' + logo + '</div>';
       innerHtml +=  '<div class="ol-popup-category">' + category + '</div>';
       innerHtml +=  '<div class="ol-popup-name">' + name + '</div>';
-      innerHtml +=  '<div class="ol-popup-description">' + description + '</div>';
+      innerHtml +=  '<div class="ol-popup-description"><p>' + description + '</p></div>';
       innerHtml +=  '<div class="ol-popup-link">' + link + '</div>';
       innerHtml +=  '</div>';
       return innerHtml;

@@ -60,6 +60,14 @@ function map_views_default_views() {
   $handler->display->display_options['fields']['field_location']['settings'] = array(
     'data' => 'full',
   );
+  /* Field: Content: Teaser */
+  $handler->display->display_options['fields']['field_location_teaser']['id'] = 'field_location_teaser';
+  $handler->display->display_options['fields']['field_location_teaser']['table'] = 'field_data_field_location_teaser';
+  $handler->display->display_options['fields']['field_location_teaser']['field'] = 'field_location_teaser';
+  $handler->display->display_options['fields']['field_location_teaser']['label'] = '';
+  $handler->display->display_options['fields']['field_location_teaser']['alter']['max_length'] = '170';
+  $handler->display->display_options['fields']['field_location_teaser']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_location_teaser']['element_label_colon'] = FALSE;
   /* Field: Content: Body */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
@@ -163,7 +171,7 @@ function map_views_default_views() {
   $handler->display->display_options['style_options']['data_source']['geofield'] = 'field_location';
   $handler->display->display_options['style_options']['data_source']['wkt'] = 'title';
   $handler->display->display_options['style_options']['data_source']['name_field'] = 'title';
-  $handler->display->display_options['style_options']['data_source']['description_field'] = 'body';
+  $handler->display->display_options['style_options']['data_source']['description_field'] = 'field_location_teaser';
   $handler->display->display_options['style_options']['jsonp_prefix'] = '';
   $handler->display->display_options['path'] = 'locations-feed';
   $translatables['locations'] = array(

@@ -15,7 +15,7 @@ function map_field_default_field_instances() {
     'bundle' => 'location',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => '',
+    'description' => 'The main content for a full-length description of your location and services',
     'display' => array(
       'default' => array(
         'label' => 'hidden',
@@ -52,7 +52,7 @@ function map_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -127,7 +127,7 @@ function map_field_default_field_instances() {
         'use_geocoder' => 1,
       ),
       'type' => 'openlayers_geofield',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -185,7 +185,7 @@ function map_field_default_field_instances() {
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -226,7 +226,7 @@ function map_field_default_field_instances() {
         'editable' => FALSE,
       ),
       'type' => 'hser_hierarchy',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -257,7 +257,7 @@ function map_field_default_field_instances() {
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'text_processing' => 0,
+      'text_processing' => 1,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
@@ -267,7 +267,7 @@ function map_field_default_field_instances() {
         'rows' => 2,
       ),
       'type' => 'text_textarea',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -307,7 +307,7 @@ function map_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -322,7 +322,7 @@ function map_field_default_field_instances() {
         'module' => 'image',
         'settings' => array(
           'image_link' => '',
-          'image_style' => '',
+          'image_style' => 'location_content_400x300',
         ),
         'type' => 'image',
         'weight' => 3,
@@ -358,7 +358,7 @@ function map_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -450,7 +450,47 @@ function map_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 12,
+      'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'node-location-field_location_teaser'
+  $field_instances['node-location-field_location_teaser'] = array(
+    'bundle' => 'location',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => 'The teaser text is displayed in the map pop-ups and should give the reader a brief description of your location or services. The output will be <strong>limited to 170 characters.</strong>',
+    'display' => array(
+      'default' => array(
+        'label' => 'hidden',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 10,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_location_teaser',
+    'label' => 'Teaser',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 3,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 2,
     ),
   );
 
@@ -508,7 +548,7 @@ function map_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -523,6 +563,9 @@ function map_field_default_field_instances() {
   t('Location');
   t('Logo');
   t('Phone');
+  t('Teaser');
+  t('The main content for a full-length description of your location and services');
+  t('The teaser text is displayed in the map pop-ups and should give the reader a brief description of your location or services. The output will be <strong>limited to 170 characters.</strong>');
   t('Website');
 
   return $field_instances;

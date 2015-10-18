@@ -464,7 +464,9 @@ div.fancytree-drag-helper.fancytree-drop-reject {
       text-decoration: none; }
 
 #popup-content {
-  padding: 10px; }
+  padding: 10px;
+  max-width: 350px;
+  min-width: 200px; }
   #popup-content .ol-popup-logo {
     float: left;
     margin-right: 5px; }
@@ -480,6 +482,14 @@ div.fancytree-drag-helper.fancytree-drop-reject {
     margin-top: -9px;
     border-radius: 2px;
     background-color: rgba(113, 154, 203, 0.48); }
+  #popup-content .ol-popup-description {
+    display: inline;
+    max-width: 350px;
+    white-space: normal; }
+    #popup-content .ol-popup-description p {
+      max-width: 290px;
+      min-width: 240px;
+      font-size: 85%; }
 
 #popup-content .multiple .ol-popup-category {
   margin-right: 0;
