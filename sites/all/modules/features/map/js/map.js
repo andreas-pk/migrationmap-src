@@ -6,7 +6,6 @@ Drupal.behaviors.map = {
   attach: function (context, settings) {
     var map = getMap();
     // @todo fetch cluster layer dynamically
-    console.log(map, 'm');
     if(map.layers['openlayers_examples_layer_cluster_cities_pdm'] != undefined) {
       map.layers['openlayers_examples_layer_cluster_cities_pdm'].setStyle(addIconStyle);
     }
@@ -111,10 +110,10 @@ var addIconStyle = function(feature, resolution) {
   if (feature === undefined) return;
   var iconStyle = {};
   var featureContent = feature.get('features');
+  // try to fetch geometry from feature
   if (featureContent === undefined) {
     featureContent = feature.get('geometry');
   }
-  console.log(featureContent, 'f-a');
   // different iconStyles for single and clustered features
   if (featureContent.length == 1) {
     iconStyle = singleFeatureStyle(featureContent[0]);

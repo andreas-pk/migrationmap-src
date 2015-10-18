@@ -47,7 +47,11 @@ Drupal.openlayers.pluginManager.register({
           return feature;
         }
       });
-      if (feature === undefined) return;
+      if (feature === undefined) {
+        // close popup on click outside from popup
+        closer.onclick();
+        return;
+      }
       content.innerHTML = '';
       // set position at marker (feature) point
       overlay.setPosition(feature.getGeometry().getCoordinates());
