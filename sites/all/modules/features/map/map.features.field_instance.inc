@@ -76,7 +76,7 @@ function map_field_default_field_instances() {
         'module' => 'openlayers_geofield',
         'settings' => array(
           'data' => 'full',
-          'map_preset' => 'openlayers_location_geofield_map_geofield_formatter',
+          'map_preset' => 'mp_openlayers_geofield_map_geofield_formatter',
         ),
         'type' => 'openlayers_geofield',
         'weight' => 0,
@@ -122,7 +122,7 @@ function map_field_default_field_instances() {
             ),
           ),
         ),
-        'openlayers_map' => 'openlayers_geofield_map_geofield',
+        'openlayers_map' => 'mp_openlayers_geofield_map_geofield',
         'showInputField' => 0,
         'use_geocoder' => 1,
       ),

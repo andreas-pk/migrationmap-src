@@ -102,5 +102,95 @@ function map_default_openlayers_maps() {
   );
   $export['map_views_map_location_page_1'] = $ol_map;
 
+  $ol_map = new stdClass();
+  $ol_map->disabled = FALSE; /* Edit this to true to make a default ol_map disabled initially */
+  $ol_map->api_version = 1;
+  $ol_map->machine_name = 'mp_openlayers_geofield_map_geofield';
+  $ol_map->name = 'MP Geofield Map';
+  $ol_map->description = '';
+  $ol_map->factory_service = 'openlayers.map.internal.OLMap';
+  $ol_map->options = array(
+    'width' => 'auto',
+    'height' => '300px',
+    'contextualLinks' => 1,
+    'provideBlock' => 1,
+    'provideIframe' => 1,
+    'view' => array(
+      'center' => array(
+        'lat' => '13.0732940309871',
+        'lon' => '52.398143417957925',
+      ),
+      'rotation' => '0',
+      'zoom' => '13',
+      'minZoom' => '0',
+      'maxZoom' => '0',
+    ),
+    'layers' => array(
+      0 => 'openlayers_layer_openstreetmap_reduced',
+      1 => 'geofield_field_formatter_layer',
+    ),
+    'controls' => array(),
+    'interactions' => array(
+      0 => 'openlayers_interaction_doubleclickzoom',
+      1 => 'openlayers_interaction_dragpan',
+      2 => 'openlayers_interaction_mousewheelzoom',
+    ),
+    'components' => array(
+      0 => 'openlayers_geofield_component_geofield',
+    ),
+    'sources' => array(
+      0 => 'openlayers_geofield_source_openstreetmap',
+      1 => 'geofield_field_formatter_source',
+    ),
+    'provideBlockLayerSwitcher' => 0,
+    'renderer' => 'canvas',
+  );
+  $export['mp_openlayers_geofield_map_geofield'] = $ol_map;
+
+  $ol_map = new stdClass();
+  $ol_map->disabled = FALSE; /* Edit this to true to make a default ol_map disabled initially */
+  $ol_map->api_version = 1;
+  $ol_map->machine_name = 'mp_openlayers_geofield_map_geofield_formatter';
+  $ol_map->name = 'MP Geofield Map: Field Formatter';
+  $ol_map->description = '';
+  $ol_map->factory_service = 'openlayers.map.internal.OLMap';
+  $ol_map->options = array(
+    'width' => 'auto',
+    'height' => '300px',
+    'contextualLinks' => 1,
+    'provideBlock' => 0,
+    'provideIframe' => 1,
+    'view' => array(
+      'center' => array(
+        'lat' => '13.074540904420328',
+        'lon' => '52.39811654666576',
+      ),
+      'rotation' => '0',
+      'zoom' => '13',
+      'minZoom' => '0',
+      'maxZoom' => '0',
+    ),
+    'layers' => array(
+      0 => 'openlayers_layer_openstreetmap_reduced',
+      1 => 'geofield_field_formatter_layer',
+    ),
+    'controls' => array(),
+    'interactions' => array(
+      0 => 'openlayers_interaction_doubleclickzoom',
+      1 => 'openlayers_interaction_dragpan',
+      2 => 'openlayers_interaction_mousewheelzoom',
+    ),
+    'components' => array(
+      0 => 'openlayers_geofield_component_zoom_to_source',
+    ),
+    'sources' => array(
+      0 => 'openlayers_geofield_source_openstreetmap',
+      1 => 'geofield_field_formatter_source',
+    ),
+    'provideBlockLayerSwitcher' => 0,
+    'renderer' => 'canvas',
+  );
+  $export['mp_openlayers_geofield_map_geofield_formatter'] = $ol_map;
+
   return $export;
 }

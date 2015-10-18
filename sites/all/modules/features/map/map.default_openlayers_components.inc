@@ -32,5 +32,20 @@ function map_default_openlayers_components() {
   );
   $export['locations_geojson_popup'] = $ol_component;
 
+  $ol_component = new stdClass();
+  $ol_component->disabled = FALSE; /* Edit this to true to make a default ol_component disabled initially */
+  $ol_component->api_version = 1;
+  $ol_component->machine_name = 'locations_popup';
+  $ol_component->name = 'Locations popup';
+  $ol_component->description = '';
+  $ol_component->factory_service = 'openlayers.component.internal.Popup';
+  $ol_component->options = array(
+    'layers' => array(
+      'openlayers_examples_layer_cluster_cities_pdm' => 'openlayers_examples_layer_cluster_cities_pdm',
+    ),
+    'positioning' => 'top-left',
+  );
+  $export['locations_popup'] = $ol_component;
+
   return $export;
 }
