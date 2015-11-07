@@ -75,10 +75,9 @@ jQuery(function () {
         //
         if (node.selected === false && node.isActive() === true) {
           node.setActive(false);
-          // console.log(node, 'de-select node');
         }
         if (node.selected === true) {
-          console.log(node, 'select node');
+          //console.log(node, 'select node');
         }
       }
 

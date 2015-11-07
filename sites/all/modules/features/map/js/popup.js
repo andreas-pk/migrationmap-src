@@ -84,7 +84,9 @@ Drupal.openlayers.pluginManager.register({
         is_visible = 'visible';
       }
       var innerHtml = '<div class="cluster-slide-wrapper ' + is_visible +'">';
-      innerHtml +=  '<div class="ol-popup-logo">' + logo + '</div>';
+      if (logo != '') {
+        innerHtml += '<div class="ol-popup-logo">' + logo + '</div>';
+      }
       innerHtml +=  '<div class="ol-popup-category">' + category + '</div>';
       innerHtml +=  '<div class="ol-popup-name">' + name + '</div>';
       innerHtml +=  '<div class="ol-popup-description"><p>' + description + '</p></div>';
