@@ -121,7 +121,7 @@ function map_default_openlayers_maps() {
         'lon' => '52.39814341795801',
       ),
       'rotation' => '0',
-      'zoom' => '13',
+      'zoom' => '12',
       'minZoom' => '0',
       'maxZoom' => '0',
     ),
@@ -162,11 +162,11 @@ function map_default_openlayers_maps() {
     'provideIframe' => 1,
     'view' => array(
       'center' => array(
-        'lat' => '13.074540904420328',
-        'lon' => '52.39811654666576',
+        'lat' => '13.074540904420001',
+        'lon' => '52.39811654666602',
       ),
       'rotation' => '0',
-      'zoom' => '13',
+      'zoom' => '12',
       'minZoom' => '0',
       'maxZoom' => '0',
     ),

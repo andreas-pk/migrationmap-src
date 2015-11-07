@@ -473,6 +473,7 @@ div.fancytree-drag-helper.fancytree-drop-reject {
     padding-right: 10px; }
   #popup-content .ol-popup-name {
     font-weight: bold;
+    white-space: normal;
     clear: right; }
   #popup-content .ol-popup-category {
     font-size: 10px;

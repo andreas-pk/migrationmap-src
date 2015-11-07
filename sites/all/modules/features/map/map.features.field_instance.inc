@@ -52,7 +52,7 @@ function map_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 3,
+      'weight' => 9,
     ),
   );
 
@@ -127,7 +127,7 @@ function map_field_default_field_instances() {
         'use_geocoder' => 1,
       ),
       'type' => 'openlayers_geofield',
-      'weight' => 7,
+      'weight' => 3,
     ),
   );
 
@@ -185,7 +185,7 @@ function map_field_default_field_instances() {
         ),
       ),
       'type' => 'addressfield_standard',
-      'weight' => 6,
+      'weight' => 2,
     ),
   );
 
@@ -226,7 +226,7 @@ function map_field_default_field_instances() {
         'editable' => FALSE,
       ),
       'type' => 'hser_hierarchy',
-      'weight' => 12,
+      'weight' => 1,
     ),
   );
 
@@ -267,7 +267,7 @@ function map_field_default_field_instances() {
         'rows' => 2,
       ),
       'type' => 'text_textarea',
-      'weight' => 10,
+      'weight' => 7,
     ),
   );
 
@@ -307,7 +307,7 @@ function map_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'email_textfield',
-      'weight' => 9,
+      'weight' => 5,
     ),
   );
 
@@ -358,7 +358,7 @@ function map_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 5,
+      'weight' => 12,
     ),
   );
 
@@ -409,7 +409,7 @@ function map_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'image_image',
-      'weight' => 1,
+      'weight' => 11,
     ),
   );
 
@@ -450,7 +450,7 @@ function map_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 13,
+      'weight' => 6,
     ),
   );
 
@@ -490,7 +490,7 @@ function map_field_default_field_instances() {
         'rows' => 3,
       ),
       'type' => 'text_textarea',
-      'weight' => 2,
+      'weight' => 8,
     ),
   );
 
@@ -548,7 +548,7 @@ function map_field_default_field_instances() {
       'module' => 'link',
       'settings' => array(),
       'type' => 'link_field',
-      'weight' => 8,
+      'weight' => 4,
     ),
   );
 
