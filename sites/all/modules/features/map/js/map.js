@@ -23,8 +23,8 @@ var fetchData = function (categories) {
   var map = getMap();
   var locationsFeedName = findGeoJSONFeedInSources(map.sources);
   var locationsFeed = map.sources[locationsFeedName];
-  var locationsFeedUrl = '?q=' + Drupal.settings.pathPrefix + 'locations-feed';
-  //var locationsFeedUrl = Drupal.settings.pathPrefix + 'locations-feed';
+  //var locationsFeedUrl = '?q=' + Drupal.settings.pathPrefix + 'locations-feed';
+  var locationsFeedUrl = Drupal.settings.basePath + Drupal.settings.pathPrefix + 'locations-feed';
 
   if (categories != undefined) {
     locationsFeedUrl += '/' + categories;
@@ -49,7 +49,7 @@ jQuery(function () {
   if (jQuery('#filter').length) {
     jQuery('#filter').fancytree({
       source: {
-        url: '?q=' + Drupal.settings.pathPrefix + 'map/map-filter',
+        url: Drupal.settings.basePath + Drupal.settings.pathPrefix + 'map/map-filter',
         cache: false
       },
       activeVisible: true,

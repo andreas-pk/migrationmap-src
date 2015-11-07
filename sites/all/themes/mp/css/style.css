@@ -534,6 +534,12 @@ div.fancytree-drag-helper.fancytree-drop-reject {
 .front .title {
   display: none; }
 
+.node .field-name-field-location-logo {
+  float: right;
+  margin-top: -100px; }
+.node .field-label-inline {
+  display: table; }
+
 .page-node .title {
   margin-top: 40px; }
 

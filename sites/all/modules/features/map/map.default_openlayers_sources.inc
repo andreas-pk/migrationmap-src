@@ -55,7 +55,7 @@ function map_default_openlayers_sources() {
   $ol_source->description = '';
   $ol_source->factory_service = 'openlayers.source.internal.Vector';
   $ol_source->options = array(
-    'url' => 'http://mp.local/en/locations',
+    'url' => 'locations',
   );
   $export['source_views_map_location_openlayers_1'] = $ol_source;
 
