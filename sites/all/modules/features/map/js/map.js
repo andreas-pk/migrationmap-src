@@ -23,7 +23,8 @@ var fetchData = function (categories) {
   var map = getMap();
   var locationsFeedName = findGeoJSONFeedInSources(map.sources);
   var locationsFeed = map.sources[locationsFeedName];
-  var locationsFeedUrl = Drupal.settings.pathPrefix + 'locations-feed';
+  var locationsFeedUrl = '?q=' + Drupal.settings.pathPrefix + 'locations-feed';
+  //var locationsFeedUrl = Drupal.settings.pathPrefix + 'locations-feed';
 
   if (categories != undefined) {
     locationsFeedUrl += '/' + categories;
@@ -48,7 +49,7 @@ jQuery(function () {
   if (jQuery('#filter').length) {
     jQuery('#filter').fancytree({
       source: {
-        url: Drupal.settings.pathPrefix + 'map/map-filter',
+        url: '?q=' + Drupal.settings.pathPrefix + 'map/map-filter',
         cache: false
       },
       activeVisible: true,
@@ -130,7 +131,7 @@ var clusterStyle = function (feature) {
   var size = feature.length;
   return new ol.style.Style({
     image: new ol.style.Circle({
-      radius: size * 6.2,
+      radius: Math.max(12, (12 + 0.35*size)),
       stroke: new ol.style.Stroke({
         color: '#fff'
       }),
@@ -159,9 +160,9 @@ var singleFeatureStyle = function (feature) {
   // default iconStyle
   return new ol.style.Style({
     image: new ol.style.Icon( ({
-      anchor: [0.5, 0.5],
-      anchorXUnits: 'fraction',
-      anchorYUnits: 'pixels',
+      //anchor: [1, 0.1],
+      //anchorXUnits: 'fraction',
+      //anchorYUnits: 'pixels',
       opacity: 1,
       scale: 0.14,
       src: Drupal.settings.themePath + '/images/source/' + icon_image_name +'-icon.png'

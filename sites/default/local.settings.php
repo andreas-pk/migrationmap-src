@@ -7,8 +7,8 @@
  */
 $databases['default']['default'] = array(
   'driver' => 'mysql',
-  'database' => 'mp',
-  'username' => 'mp',
-  'password' => '45a2189b7b9de667b16fcc7c41bfb2dd',
+  'database' => 'migmap',
+  'username' => 'migmap',
+  'password' => 'Pei8niet9aiy6ke8',
   'host' => 'localhost',
 );
