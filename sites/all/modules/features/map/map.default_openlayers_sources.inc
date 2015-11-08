@@ -41,7 +41,7 @@ function map_default_openlayers_sources() {
   $ol_source->description = '';
   $ol_source->factory_service = 'openlayers.source.internal.Vector';
   $ol_source->options = array(
-    'url' => 'http://mp.local/locations-feed',
+    'url' => 'locations-feed',
     'source' => 'source_views_locations_openlayers_1',
     'distance' => '50',
   );

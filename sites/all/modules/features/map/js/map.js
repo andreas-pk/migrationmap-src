@@ -20,9 +20,7 @@ Drupal.behaviors.map = {
  * @categories term ids '1+2+3' or '1,2,3' are attached to request url
  */
 var fetchData = function (categories) {
-  var map = getMap();
-  var locationsFeedName = findGeoJSONFeedInSources(map.sources);
-  var locationsFeed = map.sources[locationsFeedName];
+  var locationsFeed = getLocationsFeed();
   //var locationsFeedUrl = '?q=' + Drupal.settings.pathPrefix + 'locations-feed';
   var locationsFeedUrl = Drupal.settings.basePath + Drupal.settings.pathPrefix + 'locations-feed';
 
@@ -43,6 +41,9 @@ var fetchData = function (categories) {
 };
 
 jQuery(function () {
+
+  replaceJSONSourcePath(getLocationsFeed());
+
   /**
    * create filter tree with data from ajax call
    */
@@ -61,6 +62,9 @@ jQuery(function () {
       activate: function (event, data) {
       },
       deactivate: function (event, data) {
+      },
+      create: function (event, data) {
+       // fetchData();
       },
       select: function (event, data) {
         // A node was selected: fetchData (and redraw map)
@@ -88,10 +92,10 @@ jQuery(function () {
 // helper function to fetch the map from dom tree via its id
 var getMap = function() {
   var mapId = jQuery('.openlayers-map').attr('id');
-  var map = Drupal.openlayers.instances[mapId];
-  return map;
+  return Drupal.openlayers.getMapById(mapId);
 }
 
+// helper function to get (only first) json src from map sources
 var findGeoJSONFeedInSources = function(sources) {
   for(var element in sources) {
     if(sources[element] instanceof ol.source.GeoJSON) {
@@ -99,6 +103,20 @@ var findGeoJSONFeedInSources = function(sources) {
     }
   }
 };
+
+var replaceJSONSourcePath = function(feedSource) {
+  //console.log('feed', feedSource);
+  fetchData();
+};
+
+// helper function to get locations feed (from map)
+var getLocationsFeed = function () {
+  var map = getMap();
+  var locationsFeedName = findGeoJSONFeedInSources(map.sources);
+  var locationsFeed = map.sources[locationsFeedName];
+  return locationsFeed;
+};
+
 /**
  * Helper function to return feature style depending on a single feature or a cluster.
  * @param feature
