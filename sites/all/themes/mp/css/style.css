@@ -8,7 +8,7 @@ body {
     background-color: #fff; }
 
 a:link, a:visited {
-  color: blue;
+  color: #0707B9;
   text-decoration: none; }
 
 a:hover, a:active {
@@ -526,11 +526,30 @@ div.fancytree-drag-helper.fancytree-drop-reject {
   width: 600px; }
 
 .main-menu li {
-  border-right: 2px solid #000;
-  margin: 5px 0;
-  padding: 0 10px 0 0; }
-  .main-menu li.last {
+  margin: 5px 0; }
+  .main-menu li:after {
+    display: inline-block;
+    content: "";
+    border-right: 1px solid #999999;
+    height: 12px;
+    margin: 0 10px 0 12px; }
+  .main-menu li.last:after {
     border-right: 0px; }
+
+.view-all-locations .description {
+  color: #999;
+  font-size: small; }
+.view-all-locations .form-submit {
+  width: 70px;
+  height: 25px; }
+.view-all-locations tr.even {
+  background-color: #f0f0f0; }
+.view-all-locations tr .views-field-field-location-email {
+  max-width: 225px; }
+.view-all-locations tr .views-field-title.active {
+  max-width: 250px; }
+.view-all-locations td.active {
+  background: none; }
 
 .front #first-time,
 .front .title {

@@ -1,8 +1,13 @@
 .main-menu
   li
-    border-right: 2px solid $black
     margin: 5px 0
-    padding: 0 10px 0 0
 
+    &:after
+      display: inline-block
+      content: ''
+      border-right: 1px solid $dark_grey
+      height: 12px
+      margin: 0 10px 0 12px
     &.last
-      border-right: 0px
+      &:after
+        border-right: 0px
