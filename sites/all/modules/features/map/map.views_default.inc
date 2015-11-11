@@ -163,6 +163,28 @@ function map_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'location' => 'location',
   );
+  /* Filter criterion: Global: Combine fields filter */
+  $handler->display->display_options['filters']['combine']['id'] = 'combine';
+  $handler->display->display_options['filters']['combine']['table'] = 'views';
+  $handler->display->display_options['filters']['combine']['field'] = 'combine';
+  $handler->display->display_options['filters']['combine']['operator'] = 'word';
+  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Combine fields filter';
+  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['combine']['fields'] = array(
+    'title' => 'title',
+    'field_location_teaser' => 'field_location_teaser',
+    'body' => 'body',
+  );
 
   /* Display: Location GeoJSON Feed */
   $handler = $view->new_display('feed', 'Location GeoJSON Feed', 'feed_1');
@@ -192,6 +214,7 @@ function map_views_default_views() {
     t('parent_machine_name'),
     t('machine_name'),
     t('All'),
+    t('Combine fields filter'),
     t('Location GeoJSON Feed'),
   );
   $export['locations'] = $view;

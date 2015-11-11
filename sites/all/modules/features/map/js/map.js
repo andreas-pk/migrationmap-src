@@ -12,6 +12,13 @@ Drupal.behaviors.map = {
     if(map.layers['geofield_field_formatter_layer'] != undefined) {
       map.layers['geofield_field_formatter_layer'].setStyle(addIconStyle);
     }
+    if(jQuery('#search').length) {
+      jQuery('#search').autocomplete({
+        source: [],
+        minLength: 3,
+        search: function(event, ui){fetchData(event.type, getSearchText())}
+      });
+    }
   }
 };
 
@@ -19,13 +26,25 @@ Drupal.behaviors.map = {
  * fetch GeoJSON data from feed set in map
  * @categories term ids '1+2+3' or '1,2,3' are attached to request url
  */
-var fetchData = function (categories) {
+var fetchData = function (event, data) {
+  categories = undefined;
+  searchText = undefined;
   var locationsFeed = getLocationsFeed();
   //var locationsFeedUrl = '?q=' + Drupal.settings.pathPrefix + 'locations-feed';
   var locationsFeedUrl = Drupal.settings.basePath + Drupal.settings.pathPrefix + 'locations-feed';
-
+  if (event == 'fancytreeselect') {
+    categories = data;
+    searchText = getSearchText();
+  }
+  if (event == 'autocompletesearch') {
+    searchText = data;
+    categories = getTreeSelectedNodes();
+  }
   if (categories != undefined) {
     locationsFeedUrl += '/' + categories;
+  }
+  if (searchText != undefined) {
+    locationsFeedUrl += '?combine=' + searchText;
   }
   jQuery.ajax(locationsFeedUrl,
     {
@@ -39,6 +58,31 @@ var fetchData = function (categories) {
       }
     });
 };
+
+/*
+ * Help function to get selected keys from tree filter
+ * and merged into string i.e. '1+2+3'
+ */
+function getTreeSelectedNodes(tree) {
+  if (tree == undefined) {
+    tree = jQuery("#filter").fancytree("getTree");
+  }
+  // select node on activation
+  var selectedNodes = tree.getSelectedNodes();
+  var selectedKeys = [];
+  selectedNodes.forEach(function (element1, element2, set) {
+    selectedKeys.push(element1.key)
+  });
+  selectedKeys = selectedKeys.join('+');
+  return selectedKeys;
+}
+
+/*
+ *Help functin to get search text from input field
+ */
+function getSearchText() {
+  return jQuery('#search').val();
+}
 
 jQuery(function () {
 
@@ -64,24 +108,14 @@ jQuery(function () {
       deactivate: function (event, data) {
       },
       create: function (event, data) {
-       // fetchData();
       },
       select: function (event, data) {
         // A node was selected: fetchData (and redraw map)
-        var node = data.node;
-        // select node on activation
-        var selectedNodes = data.tree.getSelectedNodes();
-        var selectedKeys = [];
-        selectedNodes.forEach(function (element1, element2, set) {
-          selectedKeys.push(element1.key)
-        });
-        fetchData(selectedKeys.join('+'));
-        //
-        if (node.selected === false && node.isActive() === true) {
-          node.setActive(false);
+        fetchData(event.type, getTreeSelectedNodes(data.tree));
+        if (data.node.selected === false && data.node.isActive() === true) {
+          data.node.setActive(false);
         }
-        if (node.selected === true) {
-          //console.log(node, 'select node');
+        if (data.node.selected === true) {
         }
       }
 
@@ -106,7 +140,7 @@ var findGeoJSONFeedInSources = function(sources) {
 
 var replaceJSONSourcePath = function(feedSource) {
   //console.log('feed', feedSource);
-  fetchData();
+  fetchData('initialisation');
 };
 
 // helper function to get locations feed (from map)

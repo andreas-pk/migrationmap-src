@@ -564,6 +564,26 @@ div.fancytree-drag-helper.fancytree-drop-reject {
 .page-node .title {
   margin-top: 40px; }
 
+.search-form {
+  margin: 10px 24px;
+  border-bottom: 1px solid #999999;
+  padding: 0 0 10px 0; }
+  .search-form #search {
+    background-image: url(../images/source/search.png);
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 13% auto;
+    border: 1px solid;
+    height: 33px;
+    width: 100%;
+    padding-left: 5px; }
+  .search-form label {
+    display: none;
+    font-weight: 400; }
+
+.ui-helper-hidden-accessible {
+  display: none; }
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

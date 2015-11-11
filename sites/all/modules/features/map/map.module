@@ -65,7 +65,6 @@ function map_block_view($delta = '') {
       $block['content'] = map_block_contents($delta);
       // add via js-library https://www.drupal.org/node/756722
       drupal_add_js(drupal_get_path('module', 'map') . '/js/jquery-ui.min.js', 'file');
-      // add via js-library https://www.drupal.org/node/756722
       drupal_add_js(drupal_get_path('module', 'map') . '/js/jquery.fancytree.min.js',  array('type' => 'file', 'scope' => 'footer', 'weight' => 80));
       drupal_add_js(drupal_get_path('module', 'map') . '/js/map.js', array('type' => 'file', 'scope' => 'footer', 'weight' => 99));
       drupal_add_js(drupal_get_path('module', 'map') . '/js/popup.js', array('type' => 'file', 'scope' => 'footer', 'weight' => 99));
@@ -77,8 +76,8 @@ function map_block_view($delta = '') {
 function map_block_contents($which_block) {
   switch ($which_block) {
     case 'map_filter_block':
-
-      $output = "<div id='filter'></div>";
+      $output = '<div class="search-form"><label for="search">Search</label><input id="search"></div>';
+      $output .= "<div id='filter'></div>";
       $result = array(
         '#markup' => $output,
       );
