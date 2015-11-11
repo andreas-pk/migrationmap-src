@@ -11,7 +11,7 @@ function location_webform_default_entityform_type() {
   $items = array();
   $items['submit_location_'] = entity_import('entityform_type', '{
     "type" : "submit_location_",
-    "label" : "Submit location ",
+    "label" : "Submit your location ",
     "data" : {
       "draftable" : 0,
       "draft_redirect_path" : "",
@@ -36,7 +36,10 @@ function location_webform_default_entityform_type() {
       "roles" : { "1" : "1", "2" : "2", "3" : 0, "4" : 0, "5" : 0 },
       "resubmit_action" : "new",
       "redirect_path" : "",
-      "instruction_pre" : { "value" : "", "format" : "filtered_html" },
+      "instruction_pre" : {
+        "value" : "Here you can submit your location, organisation or service which is not on our map yet. We\\u0027ll review it and inform you when its published.\\r\\n",
+        "format" : "filtered_html"
+      },
       "anonymous_links" : 0,
       "session_save" : 0
     },
