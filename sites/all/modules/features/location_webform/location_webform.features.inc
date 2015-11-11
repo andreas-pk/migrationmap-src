@@ -45,7 +45,12 @@ function location_webform_default_entityform_type() {
     },
     "weight" : "0",
     "rdf_mapping" : [],
-    "paths" : []
+    "paths" : { "submit" : {
+        "source" : "eform\\/submit\\/submit-location-",
+        "alias" : "submit-location",
+        "language" : "und"
+      }
+    }
   }');
   return $items;
 }
