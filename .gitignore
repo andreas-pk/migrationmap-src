@@ -9,6 +9,9 @@
 /sites/default/**/private
 /sites/default/local.settings.php
 
+# Modules only needed locally
+/sites/all/modules/contrib/devel
+
 # Packages #
 ############
 *.7z
