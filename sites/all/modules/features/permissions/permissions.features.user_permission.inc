@@ -41,6 +41,15 @@ function permissions_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'access mollom statistics'.
+  $permissions['access mollom statistics'] = array(
+    'name' => 'access mollom statistics',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'mollom',
+  );
+
   // Exported permission: 'administer content types'.
   $permissions['administer content types'] = array(
     'name' => 'administer content types',
@@ -48,6 +57,15 @@ function permissions_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'administer mollom'.
+  $permissions['administer mollom'] = array(
+    'name' => 'administer mollom',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'mollom',
   );
 
   // Exported permission: 'administer nodeownership'.
@@ -67,6 +85,15 @@ function permissions_user_default_permissions() {
       'administrator' => 'administrator',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'bypass mollom protection'.
+  $permissions['bypass mollom protection'] = array(
+    'name' => 'bypass mollom protection',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'mollom',
   );
 
   // Exported permission: 'bypass node access'.
@@ -229,6 +256,15 @@ function permissions_user_default_permissions() {
       'editor' => 'editor',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'report to mollom'.
+  $permissions['report to mollom'] = array(
+    'name' => 'report to mollom',
+    'roles' => array(
+      'administrator' => 'administrator',
+    ),
+    'module' => 'mollom',
   );
 
   // Exported permission: 'show claim link'.
