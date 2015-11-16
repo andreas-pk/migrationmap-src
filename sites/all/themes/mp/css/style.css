@@ -150,18 +150,10 @@ div.status {
 #sidebar-first {
   background: #f0f0f0; }
 
-#head {
-  padding-left: 220px;
-  padding-top: 30px; }
-
 #logo {
   background-image: url("../images/source/logo.png");
   background-repeat: no-repeat;
   background-size: 100%;
-  padding: 20px;
-  position: absolute;
-  top: 7px;
-  left: 50px;
   width: 145px;
   height: 105px;
   transform: rotate(3deg); }
@@ -510,11 +502,27 @@ div.fancytree-drag-helper.fancytree-drop-reject {
   left: 95px;
   border: 1px solid #c2c2c2;
   background-color: rgba(242, 242, 242, 0.9); }
+  @media screen and (max-width: 768px) {
+    .front .ol-control {
+      left: 30px; } }
+  @media screen and (max-width: 480px) {
+    .front .ol-control {
+      display: none; } }
 .front .ol-control.ol-zoom {
   top: 60px; }
+  @media screen and (max-width: 768px) {
+    .front .ol-control.ol-zoom {
+      top: 40px; } }
 .front .ol-control.ol-zoomslider {
   top: 125px;
   width: 32px; }
+  @media screen and (max-width: 1240px) {
+    .front .ol-control.ol-zoomslider {
+      top: 140px;
+      width: 37px; } }
+  @media screen and (max-width: 768px) {
+    .front .ol-control.ol-zoomslider {
+      top: 120px; } }
 .front .ol-attribution {
   display: none; }
 

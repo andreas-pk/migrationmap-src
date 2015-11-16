@@ -30,13 +30,7 @@
   .no-sidebars &
     // Span this div 12 columns wide.
     @include span-columns(15)
-    @if $responsive
-      // Same logic for tablets.
-      @include media($tablet)
-        @include span-columns(8)
-      // 100% width for mobile devices.
-      @include media($mobile)
-        @include span-columns(4)
+
   .one-sidebar.sidebar-second &
     // Span this div 9 columns wide.
     @include span-columns(11)
@@ -53,15 +47,7 @@
 
     .container &
       width: 100%
-    @if $responsive
-      // Same logic for tablets.
-      @include media($tablet)
-        @include span-columns(6)
-        @include shift(2)
-      // 100% width for mobile devices.
-      @include media($mobile)
-        @include span-columns(4)
-        @include shift(0)
+
   .two-sidebars &
     // Span this div 7 columns wide.
     @include span-columns(8)
@@ -94,11 +80,18 @@
   //@include shift(-11)
   .sidebar-first &
     //@include shift(-15)
+
+  @include media($max-width-fluid)
+    @include span-columns(3)
+    @include shift(-6)
+    min-width: 225px
+
   @if $responsive
     // Similar logic for tablets.
     @include media($tablet)
       @include span-columns(2)
-      @include shift(-6)
+      top: 110px
+      right: -4px
       .sidebar-first &
         @include shift(-8)
     // 100% width for mobile devices.
@@ -141,8 +134,35 @@
 .inner
   padding: 0
 
+#head
+  padding-left: 220px
+  padding-top: 30px
+
+  @include media($tablet)
+    padding-left: 190px
+
+#header
+  #site-slogan
+    @include media($tablet)
+      font-size: 20px
+  #header-region
+    #block-lang_dropdown-language_content
+      @include media($tablet)
+        top: 10px
+
 // Navigation styles
 #navigation
   li
     list-style-type: none
     display: inline-block
+
+    @include media($tablet)
+      font-size: 14px
+
+#logo
+  padding: 20px
+  position: absolute
+  top: 7px
+  left: 50px
+  @include media($tablet)
+    left: 30px

@@ -102,12 +102,28 @@ $popup-slider-nav-dim: 25px
     border: 1px solid #c2c2c2
     background-color: rgba(#F2F2F2, 0.9)
 
+    @include media($tablet)
+      left: 30px
+
+    @include media($mobile)
+      display: none
+
   .ol-control.ol-zoom
     top: 60px
+
+    @include media($tablet)
+      top: 40px
 
   .ol-control.ol-zoomslider
     top: 125px
     width: 32px
+
+    @include media($max-width-fluid)
+      top: 140px
+      width: 37px
+
+    @include media($tablet)
+      top: 120px
 
   .ol-attribution
     display: none
