@@ -55,12 +55,27 @@ ul
       margin: 0
       &.fancytree-lastsib 
         background-image: none
-    
-  
+
     ul 
       padding: .3em 0 0 1em
       margin: 0
-  
+
+    // checkbox colors
+    .culture .fancytree-checkbox
+      background-color: #d2001d
+
+    .official .fancytree-checkbox
+      background-color: #262F9B
+
+    .education .fancytree-checkbox
+      background-color: #006aa8
+
+    .culture,
+    .official,
+    .education
+      ul li
+        .fancytree-checkbox
+          background-color: transparent
 
   &.fancytree-ext-wide 
     position: relative
@@ -115,6 +130,7 @@ span
     height: 20px
     margin-top: 0
     margin-left: .5em
+    border-radius: 15px
 
   &.fancytree-drag-helper-img 
     @extend %extend_1
@@ -129,7 +145,7 @@ span
 
   &.fancytree-icon 
     @extend %extend_1
-    margin-top: 4px
+    margin-top: 0
     margin-left: .5em
 
   &.fancytree-radio 
@@ -148,6 +164,7 @@ span
     width: 100%
     margin-top: 1px
     min-height: 1em
+    &.fancytree-partsel,
     &.fancytree-selected
       .fancytree-checkbox
         @include background-image(url("../images/source/check.png"))
@@ -157,7 +174,6 @@ span
 
     &.fancytree-error span.fancytree-title 
       color: $red
-  
 
   &.fancytree-title 
     color: $black

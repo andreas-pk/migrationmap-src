@@ -215,6 +215,16 @@ ul.fancytree-container {
   ul.fancytree-container ul {
     padding: 0.3em 0 0 1em;
     margin: 0; }
+  ul.fancytree-container .culture .fancytree-checkbox {
+    background-color: #d2001d; }
+  ul.fancytree-container .official .fancytree-checkbox {
+    background-color: #262F9B; }
+  ul.fancytree-container .education .fancytree-checkbox {
+    background-color: #006aa8; }
+  ul.fancytree-container .culture ul li .fancytree-checkbox,
+  ul.fancytree-container .official ul li .fancytree-checkbox,
+  ul.fancytree-container .education ul li .fancytree-checkbox {
+    background-color: transparent; }
 ul.fancytree-ext-wide {
   position: relative;
   min-width: 100%;
@@ -256,7 +266,8 @@ span.fancytree-checkbox {
   width: 20px;
   height: 20px;
   margin-top: 0;
-  margin-left: 0.5em; }
+  margin-left: 0.5em;
+  border-radius: 15px; }
 span.fancytree-expander {
   margin-top: 0;
   cursor: pointer; }
@@ -273,7 +284,7 @@ span.fancytree-node {
   width: 100%;
   margin-top: 1px;
   min-height: 1em; }
-  span.fancytree-node.fancytree-selected .fancytree-checkbox {
+  span.fancytree-node.fancytree-partsel .fancytree-checkbox, span.fancytree-node.fancytree-selected .fancytree-checkbox {
     background-image: url("../images/source/check.png");
     background-image: url("../images/source/check.png");
     background-size: 100%;

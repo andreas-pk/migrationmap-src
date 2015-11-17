@@ -95,7 +95,7 @@ function map_views_post_render(&$view) {
     $result = array();
     foreach ($terms as $key => $term) {
       $term->title = t($term->title);
-      $term->iconClass = str_replace('_', '-', $term->icon_class);
+      $term->iconclass = str_replace('_', '-', $term->iconclass);
       if (!isset($term->parent_id)) {
         $result[$key] = $term;
       }

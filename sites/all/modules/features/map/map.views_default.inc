@@ -280,7 +280,7 @@ function map_views_default_views() {
   $handler->display->display_options['fields']['machine_name']['id'] = 'machine_name';
   $handler->display->display_options['fields']['machine_name']['table'] = 'taxonomy_term_data';
   $handler->display->display_options['fields']['machine_name']['field'] = 'machine_name';
-  $handler->display->display_options['fields']['machine_name']['label'] = 'icon_class';
+  $handler->display->display_options['fields']['machine_name']['label'] = 'iconclass';
   $handler->display->display_options['fields']['machine_name']['element_label_colon'] = FALSE;
   /* Field: Taxonomy term: Weight */
   $handler->display->display_options['fields']['weight']['id'] = 'weight';
@@ -319,7 +319,7 @@ function map_views_default_views() {
     t('key'),
     t('.'),
     t('parent_id'),
-    t('icon_class'),
+    t('iconclass'),
     t('weight'),
     t('Services'),
   );

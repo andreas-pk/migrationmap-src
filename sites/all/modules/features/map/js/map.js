@@ -84,6 +84,13 @@ function getSearchText() {
   return jQuery('#search').val();
 }
 
+/*
+ *Help functin to set icon class to node
+ */
+function nodeAddClass(node) {
+  jQuery(node.li).addClass(node.data.iconclass);
+}
+
 jQuery(function () {
 
   replaceJSONSourcePath(getLocationsFeed());
@@ -102,21 +109,18 @@ jQuery(function () {
       selectMode: 3,
       generateIds: true,
       idPrefix: 'filter-',
-      icons: true,
-      activate: function (event, data) {
-      },
-      deactivate: function (event, data) {
+      icons: false,
+      renderNode: function (event, data) {
+        nodeAddClass(data.node);
       },
       create: function (event, data) {
       },
       select: function (event, data) {
         // A node was selected: fetchData (and redraw map)
         fetchData(event.type, getTreeSelectedNodes(data.tree));
-        if (data.node.selected === false && data.node.isActive() === true) {
-          data.node.setActive(false);
-        }
-        if (data.node.selected === true) {
-        }
+        // re-add class (who knows why they get lost during reactivation?)
+        nodeAddClass(data.node);
+        nodeAddClass(data.node.parent);
       }
 
     });
