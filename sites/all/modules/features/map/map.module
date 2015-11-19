@@ -134,7 +134,3 @@ function map_node_view($node, $view_mode, $langcode) {
     drupal_add_js(drupal_get_path('module', 'map') . '/js/map.js', array('type' => 'file', 'scope' => 'footer', 'weight' => 99));
   }
 }
-
-function map_openlayers_map_alter(&$map) {
-  $m = $map;
-}

@@ -93,8 +93,6 @@ function nodeAddClass(node) {
 
 jQuery(function () {
 
-  replaceJSONSourcePath(getLocationsFeed());
-
   /**
    * create filter tree with data from ajax call
    */
@@ -140,11 +138,6 @@ var findGeoJSONFeedInSources = function(sources) {
       return element;
     }
   }
-};
-
-var replaceJSONSourcePath = function(feedSource) {
-  //console.log('feed', feedSource);
-  fetchData('initialisation');
 };
 
 // helper function to get locations feed (from map)
@@ -215,12 +208,25 @@ var singleFeatureStyle = function (feature) {
   // default iconStyle
   return new ol.style.Style({
     image: new ol.style.Icon( ({
-      //anchor: [1, 0.1],
-      //anchorXUnits: 'fraction',
-      //anchorYUnits: 'pixels',
       opacity: 1,
       scale: 0.14,
       src: Drupal.settings.themePath + '/images/source/' + icon_image_name +'-icon.png'
     }))
   });
 };
+
+/**
+ * Overrides openlayers/src/Openlayers/Source/GeoJSON/js/geojson.js to add lang pathprefix
+ */
+Drupal.openlayers.pluginManager.register({
+  fs: 'openlayers.source.internal.geojson',
+  init: function (data) {
+    data.opt.projection = 'EPSG:3857';
+
+    if (data.data.mn == 'views_geojson_locations_feed_1') {
+      //data.opt.url = '?q=' + Drupal.settings.basePath + Drupal.settings.pathPrefix + 'locations-feed';
+      data.opt.url = Drupal.settings.basePath + Drupal.settings.pathPrefix + 'locations-feed';
+      return new ol.source.GeoJSON(data.opt);
+   }
+  }
+});
