@@ -10,7 +10,7 @@
 function map_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'node-location-body'
+  // Exported field_instance: 'node-location-body'.
   $field_instances['node-location-body'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -56,7 +56,7 @@ function map_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location'
+  // Exported field_instance: 'node-location-field_location'.
   $field_instances['node-location-field_location'] = array(
     'bundle' => 'location',
     'default_value' => array(
@@ -131,7 +131,7 @@ function map_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_address'
+  // Exported field_instance: 'node-location-field_location_address'.
   $field_instances['node-location-field_location_address'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -189,7 +189,7 @@ function map_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_category'
+  // Exported field_instance: 'node-location-field_location_category'.
   $field_instances['node-location-field_location_category'] = array(
     'bundle' => 'location',
     'default_value' => array(),
@@ -230,7 +230,7 @@ function map_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_contact_person'
+  // Exported field_instance: 'node-location-field_location_contact_person'.
   $field_instances['node-location-field_location_contact_person'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -271,7 +271,7 @@ function map_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_email'
+  // Exported field_instance: 'node-location-field_location_email'.
   $field_instances['node-location-field_location_email'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -311,7 +311,7 @@ function map_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_logo'
+  // Exported field_instance: 'node-location-field_location_logo'.
   $field_instances['node-location-field_location_logo'] = array(
     'bundle' => 'location',
     'deleted' => 0,
@@ -362,7 +362,7 @@ function map_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_phone'
+  // Exported field_instance: 'node-location-field_location_phone'.
   $field_instances['node-location-field_location_phone'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -403,7 +403,7 @@ function map_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_teaser'
+  // Exported field_instance: 'node-location-field_location_teaser'.
   $field_instances['node-location-field_location_teaser'] = array(
     'bundle' => 'location',
     'default_value' => NULL,
@@ -443,7 +443,7 @@ function map_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-location-field_location_website'
+  // Exported field_instance: 'node-location-field_location_website'.
   $field_instances['node-location-field_location_website'] = array(
     'bundle' => 'location',
     'default_value' => NULL,

@@ -5,6 +5,7 @@ dependencies[] = addressfield
 dependencies[] = email
 dependencies[] = hser
 dependencies[] = link
+dependencies[] = openlayers
 dependencies[] = services
 dependencies[] = strongarm
 features[ckeditor_profile][] = Advanced

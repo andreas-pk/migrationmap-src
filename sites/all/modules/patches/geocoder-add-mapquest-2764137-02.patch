@@ -1,0 +1,114 @@
+diff --git a/geocoder.admin.inc b/geocoder.admin.inc
+index b3d1407..05c478a 100644
+--- a/geocoder.admin.inc
++++ b/geocoder.admin.inc
+@@ -42,6 +42,14 @@ function geocoder_admin_settings($form, &$form_state) {
+     '#required' => FALSE,
+   );
+ 
++  $form['geocoder_apikey_mapquest'] = array(
++    '#type' => 'textfield',
++    '#title' => t('MapQuest API Key'),
++    '#description' => t('You can obtain a MapQuest API Key at ') . 'https://developer.mapquest.com/plan_purchase/steps/business_edition/business_edition_free/register',
++    '#default_value' => empty($geocoder_settings['geocoder_apikey_mapquest']) ? '' : $geocoder_settings['geocoder_apikey_mapquest'],
++    '#required' => FALSE,
++  );
++
+   $form['geocoder_google_auth_method'] = array(
+     '#type'          => 'select',
+     '#title'         => t('Google API Authorization Method'),
+@@ -148,5 +156,6 @@ function geocoder_admin_settings_submit($form, &$form_state) {
+   $geocoder_settings['geocoder_apikey_bing'] = trim($form_state['values']['geocoder_apikey_bing']);
+   $geocoder_settings['geocoder_apikey_mapzen'] = trim($form_state['values']['geocoder_apikey_mapzen']);
+   $geocoder_settings['geocoder_apikey_google'] = trim($form_state['values']['geocoder_apikey_google']);
++  $geocoder_settings['geocoder_apikey_mapquest'] = trim($form_state['values']['geocoder_apikey_mapquest']);
+   variable_set("geocoder_settings", $geocoder_settings);
+ }
+diff --git a/plugins/geocoder_handler/mapquest.inc b/plugins/geocoder_handler/mapquest.inc
+new file mode 100644
+index 0000000..edd01e7
+--- /dev/null
++++ b/plugins/geocoder_handler/mapquest.inc
+@@ -0,0 +1,82 @@
++<?php
++
++/**
++ * @file
++ * Plugin to provide a MapQuest geocoder. This is not the "Nominatim" provider,
++ * but rather the regular mapquest Geocoder offering. The MapQuest "Nominatim"
++ * provider uses only data provided to Openstreetmap, whereas their regular
++ * offering includes access to extra licensed data.
++ */
++
++$plugin = array(
++  'title' => t("MapQuest"),
++  'description' => t('Geocodes via MapQuest'),
++  'callback' => 'geocoder_mapquest',
++  'field_types' => array('text', 'text_long', 'addressfield', 'location', 'text_with_summary', 'computed', 'taxonomy_term_reference'),
++  'field_callback' => 'geocoder_mapquest_field',
++  'terms_of_service' => 'https://developer.mapquest.com/legal',
++);
++
++function geocoder_mapquest($address, $options = array()) {
++  $geocoder_settings = variable_get("geocoder_settings", array());
++  $api_url = "https://www.mapquestapi.com/geocoding/v1/address";
++
++  $query = array();
++  if (!empty($geocoder_settings['geocoder_apikey_mapquest'])) {
++    $query['key'] = $geocoder_settings['geocoder_apikey_mapquest'];
++  }
++  else {
++    watchdog('geocoder', 'MapQuest requires an API key. Geocoding failed. Set the key on the Geocoder settings page.',  NULL, WATCHDOG_ERROR, l('configure geocoder', 'admin/config/content/geocoder'));
++  }
++
++  $query['location'] = $address;
++
++  // Take the single best result.
++  $query['maxResults'] = 1;
++
++  $url = url($api_url, array(
++    'query' => $query
++  ));
++  $result = drupal_http_request($url);
++
++  if (isset($result->error)) {
++    $args = array(
++      '@code' => $result->code,
++      '@error' => $result->error,
++    );
++    $msg = t('HTTP request to MapQuest API failed.\nCode: @code\nError: @error', $args);
++    throw new Exception($msg);
++  }
++
++  $data = json_decode($result->data);
++
++  if (!empty($data->results[0]->locations[0]->latLng->lat)) {
++    geophp_load();
++    $lat = $data->results[0]->locations[0]->latLng->lat;
++    $lng = $data->results[0]->locations[0]->latLng->lng;
++    return new Point($lng, $lat);
++  }
++  else {
++    return NULL;
++  }
++}
++
++function geocoder_mapquest_field($field, $field_item) {
++  if ($field['type'] == 'text' || $field['type'] == 'text_long' || $field['type'] == 'text_with_summary' || $field['type'] == 'computed') {
++    return geocoder_mapquest($field_item['value']);
++  }
++  if ($field['type'] == 'addressfield' && module_exists('addressfield') && !addressfield_field_is_empty($field_item, $field)) {
++    $address = geocoder_widget_parse_addressfield($field_item);
++    return geocoder_mapquest($address);
++  }
++  if ($field['type'] == 'location') {
++    $address = geocoder_widget_parse_locationfield($field_item);
++    return geocoder_mapquest($address);
++  }
++  if ($field['type'] == 'taxonomy_term_reference') {
++    $term = taxonomy_term_load($field_item['tid']);
++    return geocoder_mapquest($term->name);
++  }
++}
++
++

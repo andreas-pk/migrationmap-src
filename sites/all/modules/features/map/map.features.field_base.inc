@@ -10,7 +10,7 @@
 function map_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'body'
+  // Exported field_base: 'body'.
   $field_bases['body'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -33,7 +33,7 @@ function map_field_default_field_bases() {
     'type' => 'text_with_summary',
   );
 
-  // Exported field_base: 'field_location'
+  // Exported field_base: 'field_location'.
   $field_bases['field_location'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -84,7 +84,7 @@ function map_field_default_field_bases() {
     'type' => 'geofield',
   );
 
-  // Exported field_base: 'field_location_address'
+  // Exported field_base: 'field_location_address'.
   $field_bases['field_location_address'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -101,7 +101,7 @@ function map_field_default_field_bases() {
     'type' => 'addressfield',
   );
 
-  // Exported field_base: 'field_location_category'
+  // Exported field_base: 'field_location_category'.
   $field_bases['field_location_category'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -137,7 +137,7 @@ function map_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_location_contact_person'
+  // Exported field_base: 'field_location_contact_person'.
   $field_bases['field_location_contact_person'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -158,7 +158,7 @@ function map_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_location_email'
+  // Exported field_base: 'field_location_email'.
   $field_bases['field_location_email'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -175,7 +175,7 @@ function map_field_default_field_bases() {
     'type' => 'email',
   );
 
-  // Exported field_base: 'field_location_logo'
+  // Exported field_base: 'field_location_logo'.
   $field_bases['field_location_logo'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -200,7 +200,7 @@ function map_field_default_field_bases() {
     'type' => 'image',
   );
 
-  // Exported field_base: 'field_location_phone'
+  // Exported field_base: 'field_location_phone'.
   $field_bases['field_location_phone'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -222,7 +222,7 @@ function map_field_default_field_bases() {
     'type' => 'text',
   );
 
-  // Exported field_base: 'field_location_teaser'
+  // Exported field_base: 'field_location_teaser'.
   $field_bases['field_location_teaser'] = array(
     'active' => 1,
     'cardinality' => 1,
@@ -243,7 +243,7 @@ function map_field_default_field_bases() {
     'type' => 'text_long',
   );
 
-  // Exported field_base: 'field_location_website'
+  // Exported field_base: 'field_location_website'.
   $field_bases['field_location_website'] = array(
     'active' => 1,
     'cardinality' => 1,
