@@ -31,17 +31,15 @@ function location_webform_default_entityform_type() {
       },
       "submission_show_submitted" : 0,
       "submissions_view" : "default",
-      "user_submissions_view" : "default",
+      "user_submissions_view" : "",
       "form_status" : "ENTITYFORM_OPEN",
       "roles" : { "1" : "1", "2" : "2", "3" : 0, "4" : 0, "5" : 0 },
       "resubmit_action" : "new",
       "redirect_path" : "",
       "instruction_pre" : {
-        "value" : "Here you can submit your location, organisation or service which is not on our map yet. We\\u0027ll review it and inform you when its published.\\r\\n",
+        "value" : "\\u003Cp\\u003EHere you can submit your location, organisation or service which is not on our map yet. We\\u0027ll review it and inform you when its published.\\u003C\\/p\\u003E\\r\\n",
         "format" : "filtered_html"
-      },
-      "anonymous_links" : 0,
-      "session_save" : 0
+      }
     },
     "weight" : "0",
     "rdf_mapping" : [],

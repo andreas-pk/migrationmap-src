@@ -10,7 +10,7 @@
 function location_webform_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'entityform-submit_location_-field_form_address'
+  // Exported field_instance: 'entityform-submit_location_-field_form_address'.
   $field_instances['entityform-submit_location_-field_form_address'] = array(
     'bundle' => 'submit_location_',
     'default_value' => NULL,
@@ -63,7 +63,7 @@ function location_webform_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'entityform-submit_location_-field_form_categories'
+  // 'entityform-submit_location_-field_form_categories'.
   $field_instances['entityform-submit_location_-field_form_categories'] = array(
     'bundle' => 'submit_location_',
     'default_value' => array(
@@ -103,7 +103,7 @@ function location_webform_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-submit_location_-field_form_contact'
+  // Exported field_instance: 'entityform-submit_location_-field_form_contact'.
   $field_instances['entityform-submit_location_-field_form_contact'] = array(
     'bundle' => 'submit_location_',
     'default_value' => NULL,
@@ -139,7 +139,7 @@ function location_webform_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'entityform-submit_location_-field_form_description'
+  // 'entityform-submit_location_-field_form_description'.
   $field_instances['entityform-submit_location_-field_form_description'] = array(
     'bundle' => 'submit_location_',
     'default_value' => NULL,
@@ -174,7 +174,7 @@ function location_webform_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-submit_location_-field_form_email'
+  // Exported field_instance: 'entityform-submit_location_-field_form_email'.
   $field_instances['entityform-submit_location_-field_form_email'] = array(
     'bundle' => 'submit_location_',
     'default_value' => NULL,
@@ -209,7 +209,7 @@ function location_webform_field_default_field_instances() {
   );
 
   // Exported field_instance:
-  // 'entityform-submit_location_-field_form_location_name'
+  // 'entityform-submit_location_-field_form_location_name'.
   $field_instances['entityform-submit_location_-field_form_location_name'] = array(
     'bundle' => 'submit_location_',
     'default_value' => NULL,
@@ -244,7 +244,7 @@ function location_webform_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-submit_location_-field_form_name'
+  // Exported field_instance: 'entityform-submit_location_-field_form_name'.
   $field_instances['entityform-submit_location_-field_form_name'] = array(
     'bundle' => 'submit_location_',
     'default_value' => NULL,
@@ -279,7 +279,8 @@ function location_webform_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-submit_location_-field_form_telephone'
+  // Exported field_instance:
+  // 'entityform-submit_location_-field_form_telephone'.
   $field_instances['entityform-submit_location_-field_form_telephone'] = array(
     'bundle' => 'submit_location_',
     'default_value' => NULL,
@@ -314,7 +315,7 @@ function location_webform_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'entityform-submit_location_-field_form_website'
+  // Exported field_instance: 'entityform-submit_location_-field_form_website'.
   $field_instances['entityform-submit_location_-field_form_website'] = array(
     'bundle' => 'submit_location_',
     'default_value' => NULL,

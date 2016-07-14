@@ -89,12 +89,12 @@ function map_block_contents($which_block) {
  * Implements hook_views_pre_render().
  */
 function map_views_post_render(&$view) {
-  if($view->name === 'map_filter') {
+  if($view->name === 'map_filter' && $view->current_display === 'services_map_filter') {
 
     $terms = _map_array_key_to_tid($view->display_handler->output);
     $result = array();
     foreach ($terms as $key => $term) {
-      $term->title = t($term->title);
+      //$term->title = t($term->title);
       $term->iconclass = str_replace('_', '-', $term->iconclass);
       if (!isset($term->parent_id)) {
         $result[$key] = $term;
@@ -120,8 +120,11 @@ function map_views_post_render(&$view) {
 
 function _map_array_key_to_tid($terms) {
   $result = array();
+  global $language;
   foreach ($terms as $term) {
-      $result[$term->key] = $term;
+//    $titles = field_get_items('taxonomy_term', $term, 'description', $language->language);
+    //$term->title = t($term->title);
+    $result[$term->key] = $term;
   }
   return $result;
 }

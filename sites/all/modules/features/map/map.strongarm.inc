@@ -155,14 +155,14 @@ function map_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'smtp_from';
-  $strongarm->value = 'drupal@migration-city-map-potsdam.de';
+  $strongarm->value = 'admin@migration-city-map-potsdam.de';
   $export['smtp_from'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'smtp_fromname';
-  $strongarm->value = '';
+  $strongarm->value = 'Migration City Map Potsdam';
   $export['smtp_fromname'] = $strongarm;
 
   $strongarm = new stdClass();

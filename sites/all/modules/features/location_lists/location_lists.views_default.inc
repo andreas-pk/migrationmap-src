@@ -123,6 +123,12 @@ function location_lists_views_default_views() {
   $handler->display->display_options['fields']['field_location_email']['id'] = 'field_location_email';
   $handler->display->display_options['fields']['field_location_email']['table'] = 'field_data_field_location_email';
   $handler->display->display_options['fields']['field_location_email']['field'] = 'field_location_email';
+  $handler->display->display_options['fields']['field_location_email']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_location_email']['alter']['path'] = 'mailto:[field_location_email-email]';
+  $handler->display->display_options['fields']['field_location_email']['alter']['max_length'] = '25';
+  $handler->display->display_options['fields']['field_location_email']['alter']['word_boundary'] = FALSE;
+  $handler->display->display_options['fields']['field_location_email']['alter']['trim'] = TRUE;
+  $handler->display->display_options['fields']['field_location_email']['type'] = 'email_plain';
   /* Field: Content: Website */
   $handler->display->display_options['fields']['field_location_website']['id'] = 'field_location_website';
   $handler->display->display_options['fields']['field_location_website']['table'] = 'field_data_field_location_website';
@@ -133,23 +139,16 @@ function location_lists_views_default_views() {
   $handler->display->display_options['fields']['field_location_teaser']['table'] = 'field_data_field_location_teaser';
   $handler->display->display_options['fields']['field_location_teaser']['field'] = 'field_location_teaser';
   $handler->display->display_options['fields']['field_location_teaser']['label'] = 'Description';
-  $handler->display->display_options['fields']['field_location_teaser']['alter']['max_length'] = '50';
+  $handler->display->display_options['fields']['field_location_teaser']['alter']['max_length'] = '200';
   $handler->display->display_options['fields']['field_location_teaser']['alter']['trim'] = TRUE;
   $handler->display->display_options['fields']['field_location_teaser']['settings'] = array(
     'trim_length' => '150',
   );
   $handler->display->display_options['filter_groups']['groups'] = array(
     1 => 'AND',
-    3 => 'AND',
-    2 => 'OR',
+    2 => 'AND',
+    3 => 'OR',
   );
-  /* Filter criterion: Content: Published */
-  $handler->display->display_options['filters']['status']['id'] = 'status';
-  $handler->display->display_options['filters']['status']['table'] = 'node';
-  $handler->display->display_options['filters']['status']['field'] = 'status';
-  $handler->display->display_options['filters']['status']['value'] = 1;
-  $handler->display->display_options['filters']['status']['group'] = 1;
-  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filter criterion: Content: Type */
   $handler->display->display_options['filters']['type']['id'] = 'type';
   $handler->display->display_options['filters']['type']['table'] = 'node';
@@ -158,30 +157,13 @@ function location_lists_views_default_views() {
     'location' => 'location',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Global: Combine fields filter */
-  $handler->display->display_options['filters']['combine']['id'] = 'combine';
-  $handler->display->display_options['filters']['combine']['table'] = 'views';
-  $handler->display->display_options['filters']['combine']['field'] = 'combine';
-  $handler->display->display_options['filters']['combine']['operator'] = 'word';
-  $handler->display->display_options['filters']['combine']['group'] = 2;
-  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
-  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
-  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Search';
-  $handler->display->display_options['filters']['combine']['expose']['description'] = 'Includes name, text and categories';
-  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
-  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
-  $handler->display->display_options['filters']['combine']['expose']['remember'] = TRUE;
-  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
-    2 => '2',
-    1 => '1',
-    3 => 0,
-    4 => 0,
-    5 => 0,
-  );
-  $handler->display->display_options['filters']['combine']['fields'] = array(
-    'name' => 'name',
-    'field_location_teaser' => 'field_location_teaser',
-  );
+  /* Filter criterion: Content: Published */
+  $handler->display->display_options['filters']['status']['id'] = 'status';
+  $handler->display->display_options['filters']['status']['table'] = 'node';
+  $handler->display->display_options['filters']['status']['field'] = 'status';
+  $handler->display->display_options['filters']['status']['value'] = 1;
+  $handler->display->display_options['filters']['status']['group'] = 1;
+  $handler->display->display_options['filters']['status']['expose']['operator'] = FALSE;
   /* Filter criterion: Taxonomy term: Term */
   $handler->display->display_options['filters']['tid']['id'] = 'tid';
   $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_term_data';
@@ -253,6 +235,30 @@ function location_lists_views_default_views() {
       'value' => '14482',
     ),
   );
+  /* Filter criterion: Global: Combine fields filter */
+  $handler->display->display_options['filters']['combine']['id'] = 'combine';
+  $handler->display->display_options['filters']['combine']['table'] = 'views';
+  $handler->display->display_options['filters']['combine']['field'] = 'combine';
+  $handler->display->display_options['filters']['combine']['operator'] = 'word';
+  $handler->display->display_options['filters']['combine']['group'] = 2;
+  $handler->display->display_options['filters']['combine']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['combine']['expose']['operator_id'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['combine']['expose']['description'] = 'Includes name, text and categories';
+  $handler->display->display_options['filters']['combine']['expose']['operator'] = 'combine_op';
+  $handler->display->display_options['filters']['combine']['expose']['identifier'] = 'combine';
+  $handler->display->display_options['filters']['combine']['expose']['remember'] = TRUE;
+  $handler->display->display_options['filters']['combine']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => '1',
+    3 => 0,
+    4 => 0,
+    5 => 0,
+  );
+  $handler->display->display_options['filters']['combine']['fields'] = array(
+    'name' => 'name',
+    'field_location_teaser' => 'field_location_teaser',
+  );
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
@@ -280,10 +286,10 @@ function location_lists_views_default_views() {
     t('Email'),
     t('Website'),
     t('Description'),
-    t('Search'),
-    t('Includes name, text and categories'),
     t('Address - Postal code'),
     t('Postal code'),
+    t('Search'),
+    t('Includes name, text and categories'),
     t('Page'),
   );
   $export['all_locations'] = $view;
